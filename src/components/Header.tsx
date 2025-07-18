@@ -1,10 +1,9 @@
 'use client';
 
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import logo from '../assets/logo.png';
 
 export default function Header() {
-    const router = useRouter();
     const pathname = usePathname();
     const navLinks = [
         { href: '/', label: 'Home' },
