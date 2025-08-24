@@ -23,7 +23,7 @@ export default function Footer() {
             <TablerBrandInstagram className="h-5 w-5" />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/enactus-windsor-canada/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
