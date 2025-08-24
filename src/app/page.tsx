@@ -12,6 +12,7 @@ import uniLogo from "@/assets/logoplace.png";
 import odetteLogo from "@/assets/logoplace.png";
 import altairixLogo from "@/assets/logoplace.png";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen w-full bg-black">
@@ -108,7 +109,7 @@ export default function Home() {
 
       {/* OUR SUPPORTERS (title left-aligned, same line-up as projects) */}
       <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight pb-15">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight pb-15 ">
           OUR SUPPORTERS
         </h2>
         <OurSupporters supporters={[uniLogo, odetteLogo, altairixLogo]} />
