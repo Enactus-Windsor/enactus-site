@@ -12,7 +12,7 @@ export default function Header() {
     ];
 
     return (
-        <header className="flex flex-col items-center p-4 text-white">
+        <header className="bg-black flex flex-col items-center p-4 text-white">
             <img src={logo.src} alt="Logo" className="h-48 w-48 object-contain mb-4" />
             <ul className="flex gap-8 list-none text-lg">
                 {navLinks.map(link => (

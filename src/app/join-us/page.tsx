@@ -43,8 +43,13 @@ export default function JoinUsPage() {
       {/* CONTENT */}
       <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col items-center text-center">
         <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
-          Welcome to Enactus Windsor! We’re thrilled to invite you to our team
-          and to help make a lasting impact in Windsor-Essex and beyond.
+          <strong>Welcome to Enactus Windsor!</strong> We’re thrilled to invite you to our team
+          and to help make a <span className="hl">
+            <span className="hl-text">lasting impact</span>
+            <svg aria-hidden="true" className="hl-ink" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
+            </svg>
+          </span> in Windsor-Essex and beyond.
         </p>
 
         <div className="mt-8 rounded-2xl overflow-hidden shadow-lg ring-1 ring-white/10">
@@ -53,8 +58,8 @@ export default function JoinUsPage() {
 
         <h3 className="mt-5 text-2xl font-extrabold">Mentorship Positions</h3>
 
-        <Link href="#learn-more" className="mt-6">
-          <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition">
+        <Link href="/mentorship" className="mt-6">
+          <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition cursor-pointer">
             Learn More
           </button>
         </Link>
@@ -90,6 +95,34 @@ export default function JoinUsPage() {
         .letter {
           display: inline-block;
           animation: bob-bend 2.2s ease-in-out infinite;
+        }
+
+        .hl {
+          position: relative;
+          display: inline-block;
+        }
+        .hl-text {
+          position: relative;
+          z-index: 2;
+        }
+        .hl-ink {
+          position: absolute;
+          left: 0;
+          bottom: 0.03em; /* sit a touch closer to baseline */
+          width: 100%;
+          height: 0.5em;  /* overall band height (smaller) */
+          z-index: 1;
+        }
+        .hl-ink path {
+          stroke: #facc15;           /* yellow marker color */
+          stroke-width: 2.25;        /* thinner stroke */
+          stroke-linecap: round;     /* rounded tips like a marker */
+          stroke-linejoin: round;
+          filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.25)); /* subtle softness */
+        }
+        @media (min-width: 768px) {
+          .hl-ink { height: 0.6em; }
+          .hl-ink path { stroke-width: 3.5; }
         }
       `}</style>
     </div>
