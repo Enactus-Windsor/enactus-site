@@ -1,11 +1,9 @@
 "use client";
 
-import Header from "@/components/Header";
 
 export default function Contact() {
   return (
     <div className="relative min-h-screen bg-neutral-900 text-white">
-      <Header />
       <main className="flex flex-col items-center justify-center px-6 py-12 lg:px-20">
         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
           {/*Contact Info */}
@@ -23,7 +21,7 @@ export default function Contact() {
               <p>Windsor, Ontario, Canada, N9B 3P4</p>
               <a
                 href="mailto:enactus@uwindsor.ca"
-                className="text-yellow-400 hover:underline block mt-3"
+                className="text-yellow-400 underline hover:underline block mt-3"
               >
                 enactus@uwindsor.ca
               </a>
