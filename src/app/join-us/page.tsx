@@ -1,21 +1,22 @@
-// src/app/join-us/page.tsx
-"use client";
-
 import Image from "next/image";
 import hero from "@/assets/placeholder.png";
 import Link from "next/link";
+import type { Metadata } from "next";
+import styles from "../join-us/join-us.module.css";
+
+export const metadata: Metadata = {
+  title: "Join Us!",
+};
 
 const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR";
 
 function PhraseWave() {
-  // map every character to a span so we can stagger per-letter animation
-  // not working yet 
   return (
-    <span className="inline-block">
+    <span>
       {PHRASE.split("").map((ch, i) => (
         <span
           key={i}
-          className="letter"
+          className={styles.letter}
           style={{ animationDelay: `${i * 0.06}s` }}
         >
           {ch === " " ? "\u00A0" : ch}
@@ -30,8 +31,7 @@ export default function JoinUsPage() {
     <div className="min-h-screen w-full bg-black text-white">
       {/* MARQUEE */}
       <div className="relative overflow-hidden">
-        <div className="marquee">
-          {/* repeat 3x to fill the strip */}
+        <div className={styles.marquee}>
           <PhraseWave />
           <span className="mx-8" />
           <PhraseWave />
@@ -44,12 +44,14 @@ export default function JoinUsPage() {
       <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col items-center text-center">
         <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
           <strong>Welcome to Enactus Windsor!</strong> We’re thrilled to invite you to our team
-          and to help make a <span className="hl">
-            <span className="hl-text">lasting impact</span>
-            <svg aria-hidden="true" className="hl-ink" viewBox="0 0 100 20" preserveAspectRatio="none">
+          and to help make a{" "}
+          <span className="hl">
+            <span className="hlText">lasting impact</span>
+            <svg aria-hidden="true" className="hlInk" viewBox="0 0 100 20" preserveAspectRatio="none">
               <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
             </svg>
-          </span> in Windsor-Essex and beyond.
+          </span>{" "}
+          in Windsor-Essex and beyond.
         </p>
 
         <div className="mt-8 rounded-2xl overflow-hidden shadow-lg ring-1 ring-white/10">
@@ -64,67 +66,6 @@ export default function JoinUsPage() {
           </button>
         </Link>
       </div>
-
-      <style jsx>{`
-        /* Horizontal scroll on the whole strip */
-        @keyframes marquee-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
-
-        /* Per-letter wave + slight bend (rotate/skew) */
-        @keyframes bob-bend {
-          0%, 100% { transform: translateY(0) rotate(0deg) skewX(0deg); }
-          25%      { transform: translateY(-10px) rotate(-2deg) skewX(-2deg); }
-          50%      { transform: translateY(0) rotate(0.6deg) skewX(1deg); }
-          75%      { transform: translateY(8px) rotate(2deg) skewX(2deg); }
-        }
-
-        .marquee {
-          display: inline-flex;
-          white-space: nowrap;
-          will-change: transform;
-          animation: marquee-scroll 16s linear infinite;
-          padding: 0.75rem 0;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.03em;
-          font-size: clamp(2rem, 6vw, 4.5rem);
-        }
-
-        .letter {
-          display: inline-block;
-          animation: bob-bend 2.2s ease-in-out infinite;
-        }
-
-        .hl {
-          position: relative;
-          display: inline-block;
-        }
-        .hl-text {
-          position: relative;
-          z-index: 2;
-        }
-        .hl-ink {
-          position: absolute;
-          left: 0;
-          bottom: 0.03em; /* sit a touch closer to baseline */
-          width: 100%;
-          height: 0.5em;  /* overall band height (smaller) */
-          z-index: 1;
-        }
-        .hl-ink path {
-          stroke: #facc15;           /* yellow marker color */
-          stroke-width: 2.25;        /* thinner stroke */
-          stroke-linecap: round;     /* rounded tips like a marker */
-          stroke-linejoin: round;
-          filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.25)); /* subtle softness */
-        }
-        @media (min-width: 768px) {
-          .hl-ink { height: 0.6em; }
-          .hl-ink path { stroke-width: 3.5; }
-        }
-      `}</style>
     </div>
   );
 }

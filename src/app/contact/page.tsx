@@ -1,6 +1,8 @@
-"use client";
+import type { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+  title: "Contact", 
+};
 export default function Contact() {
   return (
     <div className="relative min-h-screen bg-neutral-900 text-white">

@@ -14,9 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Enactus Windsor",
-  description: "Empowering students to create social impact",
+  title: {
+    default: "Enactus Windsor",
+    template: "%s — Enactus Windsor", // every page that sets `title` will get this format
+  },
+  description: "Local Solutions to Global Problems",
 };
+
 
 export default function RootLayout({
   children,
