@@ -46,3 +46,36 @@ body {
   .hlInk { height: 0.6em; }
   .hlInk path { stroke-width: 3.5; }
 }
+
+.hlCircle {
+  position: relative;
+  display: inline-block;
+}
+.hlCircleText {
+  position: relative;
+  z-index: 2;
+}
+.hlCircleInk {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 130%;
+  height: 130%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+}
+.hlCircleInk path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 0.5px rgba(0,0,0,0.25));
+}
+@media (min-width: 768px) {
+  .hlCircleInk path {
+    stroke-width: 4.5;
+  }
+}
+

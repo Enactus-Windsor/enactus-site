@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-
 export const metadata: Metadata = {
   title: "Contact", 
 };
+
+import contactbg from "@/assets/odettecontact.jpg"
+import Background from "@/components/Background";
 export default function Contact() {
   return (
-    <div className="relative min-h-screen bg-neutral-900 text-white">
+    <div className="relative min-h-screen text-white">
+      <Background src={contactbg} overlay />
+
       <main className="flex flex-col items-center justify-center px-6 py-12 lg:px-20">
         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
           {/*Contact Info */}
@@ -94,12 +98,14 @@ export default function Contact() {
             </div>
 
             {/* Submit */}
-            <button
+            <div className="flex justify-center">
+              <button
               type="submit"
-              className="mt-4 px-8 py-3 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition-all duration-200 border-2 border-transparent hover:border-white"
-            >
+              className="mt-4 px-12 py-3 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition-all duration-200 border-2 border-transparent hover:cursor-pointer"
+              >
               Submit
-            </button>
+              </button>
+            </div>
           </form>
         </div>
       </main>

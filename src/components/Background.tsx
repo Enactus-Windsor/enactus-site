@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from 'next/image';
 
-type Props = { src: StaticImageData; priority?: boolean; overlay?: boolean };
+type Props = { src: StaticImageData; priority?: boolean; overlay?: boolean; className?: string };
 
-export default function Background({ src, priority, overlay }: Props) {
+export default function Background({ src, priority, overlay, className }: Props) {
     return (
-        <div className="fixed inset-0 -z-10">
+        <div className={`fixed inset-0 -z-10 ${className}`}>
             <Image
                 src={src}
                 alt=""

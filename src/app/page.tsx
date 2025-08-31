@@ -13,6 +13,7 @@ import uniLogo from "@/assets/logoplace.png";
 import odetteLogo from "@/assets/logoplace.png";
 import altairixLogo from "@/assets/logoplace.png";
 import people from "@/assets/people.jpg";
+import enactusyellow from "@/assets/enactusyellow.png";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         />
 
         <Link href="/join-us" className="mt-6">
-          <div className="bg-white text-gray-900 font-semibold py-3 px-8 rounded-full shadow hover:shadow-md transition cursor-pointer">
+          <div className="bg-white text-gray-900 font-semibold py-3 px-24 rounded-full shadow hover:shadow-md hover:bg-gray-300 transition cursor-pointer">
             Join Us!
           </div>
         </Link>
@@ -36,30 +37,44 @@ export default function Home() {
       {/* WHO WE ARE */}
       <section className="w-full bg-white">
         <div className="max-w-6xl mx-auto px-4 py-12">
-          {/* Title (left aligned with container) */}
+          {/* Title */}
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
             WHO WE ARE
           </h2>
 
-          {/* Content Row: paragraph left-aligned with a max-width, logo to its right */}
+          {/* Content Row */}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-[minmax(0,600px)_auto] gap-8 items-start">
-            {/* Paragraph with constrained width */}
-            <p className="text-lg leading-8 text-gray-700 text-left max-w-[600px]">
-              Enactus Windsor is a non-profit organization run{" "}
-              <span className="hl">
-                <span className="hlText">entirely by students</span>
-                <svg aria-hidden="true" className="hlInk" viewBox="0 0 100 20" preserveAspectRatio="none">
-                  <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
-                </svg>
-              </span>
-              {" "}that passionately addresses social, environmental, and economic issues in our Windsor community. Our goal is to identify needs and solve problems to better our Windsor community through entrepreneurship.
-            </p>
+            {/* Paragraph container (scoped styles) */}
+            <div className="text-black font-normal">
+              <p className="text-2xl leading-8 max-w-[600px] font-bold">
+                Enactus Windsor is a non-profit organization run{" "}
+                <span className="hl">
+                  <span className="hlText">entirely by students</span>
+                  <svg
+                    aria-hidden="true"
+                    className="hlInk"
+                    viewBox="0 0 100 20"
+                    preserveAspectRatio="none"
+                  >
+                    <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
+                  </svg>
+                </span>{" "}
+                that passionately addresses social, environmental, and
+                economic issues in our Windsor community. Our goal is to
+                identify needs and solve problems to better our Windsor
+                community through entrepreneurship.
+              </p>
+            </div>
 
-            {/* Logo to the right */}
+            {/* Logo */}
             <div className="flex md:justify-start ml-10">
-              <div className="w-36 h-36 border border-gray-300 rounded-xl flex items-center justify-center text-gray-400">
-                LOGO HERE
-              </div>
+              <Image
+                src={enactusyellow}
+                alt="Enactus Logo"
+                width={144}
+                height={144}
+                className="w-36 h-36 object-contain"
+              />
             </div>
           </div>
 
@@ -67,17 +82,56 @@ export default function Home() {
           <div className="mt-8">
             <div className="flex justify-center gap-14 text-gray-900">
               <div className="text-center">
-                <div className="text-3xl font-bold">2006</div>
-                <div className="text-sm text-gray-500 mt-1">FOUNDED IN</div>
+                <span className="hlCircle">
+                  <span className="hlCircleText text-3xl font-bold">2006</span>
+                  <svg
+                    className="hlCircleInk"
+                    viewBox="0 0 260 140"
+                    preserveAspectRatio="none"
+                  >
+                    <ellipse
+                      cx="130"
+                      cy="70"
+                      rx="120"
+                      ry="60"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="6"
+                    />
+                  </svg>
+                </span>
+                <div className="text-sm text-gray-900 mt-1 font-bold">
+                  FOUNDED IN
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold">11+</div>
-                <div className="text-sm text-gray-500 mt-1">PROJECTS CREATED</div>
+                <div className="text-sm text-gray-900 mt-1 font-bold">
+                  PROJECTS CREATED
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold">10,000+</div>
-                <div className="text-sm text-gray-500 mt-1">
-                  STUDENTS IMPACTED
+                <div className="text-sm text-gray-900 mt-1">
+                  <span className="hl">
+                    <span className="hlText font-bold">STUDENTS IMPACTED</span>
+                    <svg
+                      aria-hidden="true"
+                      className="hlInk"
+                      viewBox="0 0 100 20"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M2 14 C 25 10, 75 18, 98 12"
+                        fill="none"
+                        stroke="#171717"
+                        strokeWidth="2.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        filter="drop-shadow(0 0 0.5px rgba(0,0,0,0.15))"
+                      />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>

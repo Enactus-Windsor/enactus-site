@@ -2,43 +2,78 @@ import Image from "next/image";
 import hero from "@/assets/placeholder.png";
 import Link from "next/link";
 import type { Metadata } from "next";
-import styles from "../join-us/join-us.module.css";
+import styles from "./join-us.module.css";
+import joinusbg from "@/assets/joinusbg.jpg"
+import Background from "@/components/Background";
+
 
 export const metadata: Metadata = {
   title: "Join Us!",
 };
 
-const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR";
+/** Add spaces around the bullet to avoid tight joins */
+const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR  •  ";
 
-function PhraseWave() {
+function WaveMarquee({
+  text = PHRASE,
+  speed = "28s",        // slower = larger number
+  height = 120,         // px
+  intensity = "s" as "s" | "m" | "l",
+}) {
+  const pathId = intensity === "l" ? "waveL" : intensity === "m" ? "waveM" : "waveS";
+
   return (
-    <span>
-      {PHRASE.split("").map((ch, i) => (
-        <span
-          key={i}
-          className={styles.letter}
-          style={{ animationDelay: `${i * 0.06}s` }}
-        >
-          {ch === " " ? "\u00A0" : ch}
-        </span>
-      ))}
-    </span>
+    <div className={styles.waveMarquee} style={{ ["--h" as any]: `${height}px` }}>
+      <svg
+        className={styles.waveSvg}
+        viewBox="0 0 2000 120"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        aria-hidden
+      >
+        <defs>
+          {/* WAVE PATHS — make shallower by moving Y values toward 60 */}
+          <path
+            id="waveS"
+            d="M0,60 C150,54 300,66 450,60 S750,54 900,60 S1200,66 1350,60 S1650,54 1800,60 S2000,60 2000,60"
+            pathLength={100}
+          />
+          <path
+            id="waveM"
+            d="M0,60 C120,48 240,72 360,60 S600,48 720,60 S960,72 1080,60 S1320,48 1440,60 S1680,72 1800,60 S2000,60 2000,60"
+            pathLength={100}
+          />
+          <path
+            id="waveL"
+            d="M0,60 C100,42 260,78 360,60 S620,42 720,60 S980,78 1080,60 S1340,42 1440,60 S1700,78 1800,60 S2000,60 2000,60"
+            pathLength={100}
+          />
+        </defs>
+
+        {/* ONE continuous stream */}
+        <text className={styles.tp}>
+          <textPath xlinkHref={`#${pathId}`} startOffset="0" method="align" spacing="auto">
+            <animate
+              attributeName="startOffset"
+              values="0;100"
+              keyTimes="0;1"
+              dur={speed}
+              repeatCount="indefinite"
+            />
+            {text.repeat(40)} {/* plenty of repeats to keep it full */}
+          </textPath>
+        </text>
+      </svg>
+    </div>
   );
 }
 
 export default function JoinUsPage() {
   return (
-    <div className="min-h-screen w-full bg-black text-white">
-      {/* MARQUEE */}
-      <div className="relative overflow-hidden">
-        <div className={styles.marquee}>
-          <PhraseWave />
-          <span className="mx-8" />
-          <PhraseWave />
-          <span className="mx-8" />
-          <PhraseWave />
-        </div>
-      </div>
+    <div className="min-h-screen w-ful text-white">
+      <Background src={joinusbg} overlay />
+      <WaveMarquee text={PHRASE} speed="28s" height={120} intensity="s" />
 
       {/* CONTENT */}
       <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col items-center text-center">
@@ -61,7 +96,7 @@ export default function JoinUsPage() {
         <h3 className="mt-5 text-2xl font-extrabold">Mentorship Positions</h3>
 
         <Link href="/mentorship" className="mt-6">
-          <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition cursor-pointer">
+          <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition cursor-pointer hover:bg-gray-300">
             Learn More
           </button>
         </Link>

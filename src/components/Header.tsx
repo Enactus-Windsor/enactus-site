@@ -16,7 +16,7 @@ export default function Header() {
     <header className="bg-transparent text-white">
     <div className="mx-auto max-w-6xl px-4 flex flex-col items-center">
       <Image src={logo} alt="Logo" className="h-34 w-34 object-contain" />
-      <ul className="mt-1 flex gap-8 list-none text-lg">
+      <ul className="mt-1 flex gap-8 list-none font-bold text-lg">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
