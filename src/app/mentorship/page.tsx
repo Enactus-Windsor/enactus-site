@@ -21,15 +21,12 @@ export default function Mentorship() {
             </p>
           </section>
           <section className="w-full">
-            <div
-              className="w-full rounded-xl ring-1 ring-white/10 bg-white/5 flex items-center justify-center"
+            <iframe
+              src="/mentorshipPdf.pdf"
+              className="w-full rounded-xl ring-1 ring-white/10 bg-white"
               style={{ aspectRatio: "4 / 3" }}
-              aria-label="PDF placeholder"
-            >
-              <span className="text-white/60 text-sm tracking-wide">
-                PDF Placeholder
-              </span>
-            </div>
+              aria-label="Mentorship PDF"
+            />
           </section>
           <section>
             <a
