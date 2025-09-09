@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import styles from "./join-us.module.css";
 import joinusbg from "@/assets/joinusbg.jpg"
 import Background from "@/components/Background";
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet" />
 
 
 export const metadata: Metadata = {
@@ -16,17 +17,20 @@ const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR  •  ";
 
 function WaveMarquee({
   text = PHRASE,
-  speed = "28s",        // slower = larger number
+  speed = "300s",        // slower = larger number
   height = 120,         // px
   intensity = "s" as "s" | "m" | "l",
 }) {
+
   const pathId = intensity === "l" ? "waveL" : intensity === "m" ? "waveM" : "waveS";
 
   return (
     <div className={styles.waveMarquee} style={{ ["--h" as any]: `${height}px` }}>
       <svg
         className={styles.waveSvg}
-        viewBox="0 0 2000 120"
+        viewBox="0 0 2000 180"
+        width ="100%"
+        height = {height}
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -51,29 +55,45 @@ function WaveMarquee({
           />
         </defs>
 
-        {/* ONE continuous stream */}
-        <text className={styles.tp}>
-          <textPath xlinkHref={`#${pathId}`} startOffset="0" method="align" spacing="auto">
+        {/* Multiple copies for seamless scrolling */}
+        <text
+          className={styles.tp}
+          aria-hidden="true"
+          style={{ 
+          fontSize: "150px",
+          letterSpacing: "5px",
+          fontFamily: '"Source Sans" Pro, Arial, sans-serif,', // set your desired font
+          fontWeight: "bold", // or "bold"
+          fontStretch: "expanded" ,
+          transform: "scaleY(0.8)",
+          }}
+        >
+          {/* First copy - starts visible */}
+          <textPath
+            xlinkHref={`#${pathId}`}
+            startOffset="0%"
+            method="align"
+            spacing="auto"
+          >
             <animate
               attributeName="startOffset"
-              values="0;100"
-              keyTimes="0;1"
+              from="0%"
+              to="-100%"
               dur={speed}
               repeatCount="indefinite"
             />
-            {text.repeat(40)} {/* plenty of repeats to keep it full */}
+            {text.repeat(15)}
           </textPath>
         </text>
       </svg>
     </div>
   );
 }
-
 export default function JoinUsPage() {
   return (
     <div className="min-h-screen w-ful text-white">
       <Background src={joinusbg} overlay />
-      <WaveMarquee text={PHRASE} speed="28s" height={120} intensity="s" />
+      <WaveMarquee text={PHRASE} speed="28s" height={180} intensity="s" />
 
       {/* CONTENT */}
       <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col items-center text-center">
