@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import styles from "./join-us.module.css";
 import joinusbg from "@/assets/joinusbg.jpg"
 import Background from "@/components/Background";
+import joinusoverhead from "@/assets/joinusoverhead.jpg";
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet" />
 
 
@@ -110,7 +111,7 @@ export default function JoinUsPage() {
         </p>
 
         <div className="mt-8 rounded-2xl overflow-hidden shadow-lg ring-1 ring-white/10">
-          <Image src={hero} alt="Join Enactus Windsor" className="h-64 w-96 object-cover" priority />
+          <Image src={joinusoverhead} alt="Join Enactus Windsor" className="h-64 w-96 object-cover" priority />
         </div>
 
         <h3 className="mt-5 text-2xl font-extrabold">Mentorship Positions</h3>

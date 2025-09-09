@@ -1,19 +1,19 @@
 // src/app/page.tsx
 import Image from "next/image";
-import Link from "next/link";
 import heroImage from "@/assets/artboard.png";
+import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import OurSupporters from "@/components/OurSupporters";
 import Background from "@/components/Background";
 
-import bgImage from "@/assets/placeholder.png";
-import logoImage from "@/assets/placeholder.png";
+import youthrivebg from "@/assets/youthrivebg.jpg";
+import youthrivelogo from "@/assets/youthrivelogo.png";
 
-import uniLogo from "@/assets/logoplace.png";
-import odetteLogo from "@/assets/logoplace.png";
-import altairixLogo from "@/assets/logoplace.png";
 import people from "@/assets/people.jpg";
 import enactusyellow from "@/assets/enactusyellow.png";
+
+import odette from "@/assets/odettelogo.png";
+import uwindsor from "@/assets/uwindsor.png";
 
 export default function Home() {
   return (
@@ -146,22 +146,10 @@ export default function Home() {
 
           <div className="mt-8 flex flex-col gap-6">
             <ProjectCard
-              backgroundImage={bgImage}
-              logo={logoImage}
-              title="Placeholder"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            />
-            <ProjectCard
-              backgroundImage={bgImage}
-              logo={logoImage}
-              title="Placeholder"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            />
-            <ProjectCard
-              backgroundImage={bgImage}
-              logo={logoImage}
-              title="Placeholder"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              backgroundImage={youthrivebg}
+              logo={youthrivelogo}
+              title="Youthrive"
+              description="An 8-week program conducted in grade schools and high schools across Windsor-Essex County, mentoring students on creating their own eco-friendly micro-businesses."
             />
           </div>
         </div>
@@ -171,7 +159,7 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight pb-15 ">
             OUR SUPPORTERS
           </h2>
-          <OurSupporters supporters={[uniLogo, odetteLogo, altairixLogo]} />
+          <OurSupporters supporters={[uwindsor, odette]} />
         </div>
       </section>
     </div>

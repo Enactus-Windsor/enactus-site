@@ -13,16 +13,21 @@ export default function ProjectCard({ backgroundImage, logo, title, description 
   const logoSrc = typeof logo === "string" ? logo : logo?.src;
 
   return (
-    <div
-      className="relative w-full rounded-3xl overflow-hidden shadow-lg"
-      style={{
-        backgroundImage: `url(${bgSrc})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay */}
-  <div className="relative z-10 p-6 py-9 flex flex-col md:flex-row md:items-center">
+    <div className="relative w-full rounded-3xl overflow-hidden shadow-lg">
+      {/* Background image with blur */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${bgSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(2px)",
+        }}
+      />
+      <div className="absolute inset-0 bg-black/60" /> {/* Darker overlay */}
+      
+      {/* Content layer */}
+      <div className="relative z-10 p-6 py-9 flex flex-col md:flex-row md:items-center">
         
         {/* Left side: Logo */}
         {logoSrc && (

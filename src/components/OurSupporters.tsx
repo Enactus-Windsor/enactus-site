@@ -11,13 +11,13 @@ export default function OurSupporters({ supporters }: OurSupportersProps) {
         {supporters.map((supporter, i) => {
           const src = typeof supporter === "string" ? supporter : supporter.src;
           return (
-            <div key={i} className="h-16 w-40 flex items-center justify-center">
+            <div key={i} className="w-48 flex items-center justify-center">
               <Image
                 src={src}
                 alt={`Supporter ${i + 1}`}
-                width={160}
-                height={64}
-                className="object-contain"
+                width={192}
+                height={0}
+                className="w-48 h-auto object-contain"
               />
             </div>
           );
