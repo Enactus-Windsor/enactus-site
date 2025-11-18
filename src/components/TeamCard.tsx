@@ -8,7 +8,6 @@ interface TeamCardProps {
     firstName: string;
     lastName: string;
     role: string;
-    program: string;
     year: string;
     joined: string;
     image: string;
@@ -44,9 +43,6 @@ export default function TeamCard({ member }: TeamCardProps) {
               {member.lastName}
             </h1>
           </div>
-          <p className="sm:mt-2 text-sm sm:text-base text-gray-600">
-            <strong>Program:</strong> {member.program}
-          </p>
         </div>
         {/* LinkedIn Button */}
         {member.linkedin && (
