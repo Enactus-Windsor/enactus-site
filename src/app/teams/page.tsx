@@ -41,8 +41,8 @@ export default function EnactusTeams() {
       {/* Overlay header */}
       <div className="flex items-start justify-center mt-10 mb-40 sm:mb-64 z-10 overflow-hidden">
         <div className="flex flex-col items-center justify-center gap-2">
-          <div className="flex flex-col items-center justify-center w-fit bg-white opacity-95">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-black px-16 py-2 rounded-sm shadow-md">
+          <div className="flex flex-col items-center justify-center w-fit bg-[rgba(255,196,0,0.9)] bg-opacity-20">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white px-16 py-2 rounded-sm shadow-md">
               Enactus Windsor – Our Team
             </h1>
           </div>
