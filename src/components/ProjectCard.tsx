@@ -75,7 +75,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     key={m.name}
                     className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3"
                   >
-                    <div className="relative h-10 w-10 overflow-hidden rounded-full bg-yellow-400/20 flex-shrink-0" />
+                    {/* <div className="relative h-10 w-10 overflow-hidden rounded-full bg-yellow-400/20 flex-shrink-0" /> */}
                     <div className="min-w-0">
                       <p className="truncate text-sm font-medium text-slate-900">
                         {m.name}
@@ -84,7 +84,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         {m.role}
                         {m.department ? ` • ${m.department}` : ""}
                       </p>
-                      {m.linkedin && (
+                      {/* {m.linkedin && (
                         <a
                           href={m.linkedin}
                           target="_blank"
@@ -93,7 +93,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                         >
                           LinkedIn →
                         </a>
-                      )}
+                      )} */}
                     </div>
                   </li>
                 ))}
