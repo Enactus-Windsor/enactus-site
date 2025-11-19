@@ -40,7 +40,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           role: "Co-Founder",
           department: "Ascent",
           linkedin: "https://www.linkedin.com/in/massimo-gualtieri-807397359/",
-          image: "/images/pfp/MassimoGualtieri.jpg", 
+          image: "/images/pfp/MassimoGualtieri.jpg",
         },
         {
           name: "Ryan Gadoury",
@@ -59,8 +59,8 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         {
           name: "Amal Jose",
           role: "Founder",
-          department: "Chew for Change",
-          linkedin: "",
+          department: "100% Fish ",
+          linkedin: "https://www.linkedin.com/in/amalljose/",
           image: "/images/pfp/AmalJose.jpg",
         },
         {
@@ -106,18 +106,11 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/MujtabaHammoud.jpg",
         },
         {
-          name: "Matthew Najem",
-          role: "Founder",
-          department: "CentsAbility",
-          linkedin: "https://www.linkedin.com/in/matthew-najem-26137a329/",
-          image: "/images/pfp/MatthewNajem.jpg",
-        },
-        {
-          name: "Razan Hammoud",
-          role: "Founder",
-          department: "Chew for Change",
-          linkedin: "",
-          image: "/images/pfp/RazanHammoud.jpg",
+          name: "Avery Baker",
+          role: "Vice President ",
+          department: "Marketing",
+          linkedin: "https://www.linkedin.com/in/avery-baker-763108341/",
+          image: "/images/pfp/AveryBaker.jpg",
         },
         {
           name: "Harris Sami",
@@ -125,20 +118,6 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           department: "Reedify",
           linkedin: "https://www.linkedin.com/in/harris-sami-a75b99355/",
           image: "/images/pfp/HarrisSami.jpg",
-        },
-        {
-          name: "Massimo Gualtieri",
-          role: "Co-Founder",
-          department: "Ascent",
-          linkedin: "https://www.linkedin.com/in/massimo-gualtieri-807397359/",
-          image: "/images/pfp/MassimoGualtieri.jpg", // fix arw file 
-        },
-        {
-          name: "Ryan Gadoury",
-          role: "Co-Founder",
-          department: "Ascent",
-          linkedin: "https://www.linkedin.com/in/ryan-gadoury-1857b2328/",
-          image: "/images/pfp/RyanGadoury.jpeg",
         },
         {
           name: "Layla Ayoub Ghanem",
@@ -162,18 +141,11 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/AdamHanif.jpg",
         },
         {
-          name: "Hillary Quach",
+          name: "Hilary Quach",
           role: "Co-Founder",
           department: "MycoVolt",
           linkedin: "https://www.linkedin.com/in/hilary-quach/",
           image: "/images/pfp/HillaryQuach.jpg",
-        },
-        {
-          name: "Harris Sami",
-          role: "Founder",
-          department: "Reedify",
-          linkedin: "https://www.linkedin.com/in/harris-sami-a75b99355/",
-          image: "/images/pfp/HarrisSami.jpg",
         },
         {
           name: "Aneesha Bhullar",
@@ -193,7 +165,8 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           name: "Baran Ghasroddashti",
           role: "Co-VP of Venture Development",
           department: "Venture Development",
-          linkedin: "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
+          linkedin:
+            "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
           image: "/images/pfp/BaranGhasroddashti.jpeg",
         },
         {
@@ -204,6 +177,6 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/SalahShahine.jpg",
         },
       ],
-    }
-  ]  
+    },
+  ];
 }
