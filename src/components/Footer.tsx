@@ -43,7 +43,7 @@ export default function Footer() {
           <p className="font-semibold">Odette School of</p>
           <p className="font-semibold">Business</p>
           <p>401 Sunset Avenue,</p>
-          <p>Room B09</p>
+          <p>Room 102</p>
           <p>Windsor, Ontario,</p>
           <p>Canada, N9B 3P4</p>
         </div>
