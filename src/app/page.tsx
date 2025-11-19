@@ -1,13 +1,8 @@
-// src/app/page.tsx
 import Image from "next/image";
 import heroImage from "@/assets/artboard.png";
 import Link from "next/link";
-import ProjectCard from "@/components/ProjectCard";
 import OurSupporters from "@/components/OurSupporters";
 import Background from "@/components/Background";
-
-import youthrivebg from "@/assets/youthrivebg.jpg";
-import youthrivelogo from "@/assets/youthrivelogo.png";
 
 import people from "@/assets/people.jpg";
 import enactusyellow from "@/assets/enactusyellow.png";
@@ -19,7 +14,13 @@ import highline from "@/assets/highline.png";
 import johns from "@/assets/johnsOfoods.png";
 import epicentre from "@/assets/uwinEpicentre.png";
 
-export default function Home() {
+import { fetchEnactusProjects } from "@/data/enactusProjects";
+import type { EnactusProject } from "@/types/enactus";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
+
+export default async function Home() {
+  const projects: EnactusProject[] = await fetchEnactusProjects();
+
   return (
     <div className="min-h-screen w-full">
       <Background src={people} overlay />
@@ -48,7 +49,7 @@ export default function Home() {
 
           {/* Content Row */}
           <div className="mt-6 grid grid-cols-1 md:grid-cols-[minmax(0,600px)_auto] gap-8 items-start">
-            {/* Paragraph container (scoped styles) */}
+            {/* Paragraph container */}
             <div className="text-black font-normal">
               <p className="text-2xl leading-8 max-w-[600px] font-bold">
                 Enactus Windsor is a non-profit organization run{" "}
@@ -63,10 +64,10 @@ export default function Home() {
                     <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
                   </svg>
                 </span>{" "}
-                that passionately addresses social, environmental, and
-                economic issues in our Windsor community. Our goal is to
-                identify needs and solve problems to better our Windsor
-                community through entrepreneurship.
+                that passionately addresses social, environmental, and economic
+                issues in our Windsor community. Our goal is to identify needs
+                and solve problems to better our Windsor community through
+                entrepreneurship.
               </p>
             </div>
 
@@ -82,7 +83,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stats remain centered below */}
+          {/* Stats */}
           <div className="mt-8">
             <div className="flex justify-center gap-14 text-gray-900">
               <div className="text-center">
@@ -142,25 +143,24 @@ export default function Home() {
           </div>
         </div>
 
-        {/* OUR PROJECTS */}
+        {/* OUR PROJECTS – carousel */}
         <div className="max-w-6xl mx-auto px-4 py-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-            OUR PROJECTS
-          </h2>
-
-          <div className="mt-8 flex flex-col gap-6">
-            <ProjectCard
-              backgroundImage={youthrivebg}
-              logo={youthrivelogo}
-              title="Youthrive"
-              description="An 8-week program conducted in grade schools and high schools across Windsor-Essex County, mentoring students on creating their own eco-friendly micro-businesses."
-            />
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
+              OUR PROJECTS
+            </h2>
+            <p className="mt-3 text-gray-700 max-w-2xl mx-auto">
+              Discover the student-led projects creating real impact in Windsor.
+              Tap a project to learn more on our projects page.
+            </p>
           </div>
+
+          <ProjectsCarousel projects={projects} />
         </div>
 
-        {/* OUR SUPPORTERS (title left-aligned, same line-up as projects) */}
+        {/* OUR SUPPORTERS */}
         <div className="max-w-6xl mx-auto px-4 py-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight pb-15 ">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight pb-15">
             OUR SUPPORTERS
           </h2>
           <OurSupporters supporters={[uwindsor, odette,johns,glier,highline,epicentre]} />

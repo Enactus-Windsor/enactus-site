@@ -1,4 +1,4 @@
-// src/types/enactus.ts
+import type { StaticImageData } from "next/image";
 export type EnactusMember = {
   name: string;          
   role: string;          
@@ -13,3 +13,12 @@ export type EnactusTeam = {
   banner?: string;         
   members: EnactusMember[];
 };
+
+export interface EnactusProject {
+  name: string;           
+  banner: string | StaticImageData;        
+  summary: string;        
+  overview: string;       
+  departmentLead: string; 
+  members?: EnactusMember[]; 
+}
