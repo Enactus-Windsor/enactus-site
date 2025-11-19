@@ -4,7 +4,7 @@ import ascentLogo from "@/assets/projectlogos/ascent.png";
 import centsLogo from "@/assets/projectlogos/cents.png";
 import chewLogo from "@/assets/projectlogos/chew.png";
 import mycoliteLogo from "@/assets/projectlogos/mycolite.svg";
-import mycovoltLogo from "@/assets/projectlogos/mycovolt.jpg";
+import mycovoltLogo from "@/assets/projectlogos/mycovolt.png";
 import reedifyLogo from "@/assets/projectlogos/reedify.png";
 
 export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
@@ -35,15 +35,15 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       ],
     },
     {
-      name: "Chew for Change",
+      name: "100% Fish ",
       banner: chewLogo,
-      departmentLead: "Razan Hammoud",
+      departmentLead: "Amal Jose",
       summary:
         "Turns discarded fish parts into sustainable, nutritious dog treats to reduce waste and support eco-friendly practices.",
       overview:
-        "Chew for Change takes fish parts that go to waste and turns them into healthy, sustainable dog treats. The team’s goal is to reduce landfill waste, support eco-friendly practices, and help dogs live longer, healthier lives with better nutrition.",
+        "100% Fish  takes fish parts that go to waste and turns them into healthy, sustainable dog treats. The team’s goal is to reduce landfill waste, support eco-friendly practices, and help dogs live longer, healthier lives with better nutrition.",
       members: [
-        { name: "Razan Hammoud", role: "Department Lead", department: "Chew for Change" },
+        { name: "Amal Jose", role: "Department Lead", department: "100% Fish " },
       ],
     },
     {

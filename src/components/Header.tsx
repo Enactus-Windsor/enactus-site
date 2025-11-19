@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import logo from "../assets/logo.png";
 
@@ -18,7 +19,9 @@ export default function Header() {
   return (
     <header className="bg-transparent text-white">
       <div className="mx-auto max-w-6xl px-4 flex flex-col items-center">
-        <Image src={logo} alt="Logo" className="h-34 w-34 object-contain" />
+        <Link href="/" aria-label="Home">
+          <Image src={logo} alt="Logo" className="h-34 w-34 object-contain" />
+        </Link>
         <ul className="mt-1 flex gap-8 list-none font-bold text-lg">
           {navLinks.map((link) => (
             <li key={link.href}>
