@@ -47,19 +47,6 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       ],
     },
     {
-      name: "Hands for Windsor",
-      banner: "", 
-      departmentLead: "Jake Wu & Alex G",
-      summary:
-        "Connects high school students with local volunteer opportunities to complete their 40 community service hours.",
-      overview:
-        "Hands for Windsor connects high school students with local volunteer opportunities to help them complete their required 40 community service hours. Through partnerships with school boards and local organizations, the project makes it easier for students to find meaningful, age-appropriate placements. By building a user-friendly online platform, Hands for Windsor strengthens community engagement while supporting youth development.",
-      members: [
-        { name: "Jake Wu", role: "Co-Lead", department: "Hands for Windsor" },
-        { name: "Alex G", role: "Co-Lead", department: "Hands for Windsor" },
-      ],
-    },
-    {
       name: "Mycolite",
       banner: mycoliteLogo,
       departmentLead: "Layla Ghanem & Yasmeen Al Jeboury",
@@ -108,19 +95,6 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         { name: "Aneesha Bhullar", role: "Co-Lead", department: "Second Rise" },
         { name: "Madison Madore", role: "Co-Lead", department: "Second Rise" },
-      ],
-    },
-    {
-      name: "Venture Development",
-      banner: "", 
-      departmentLead: "Salah Shahine & Baran Ghasroddashti",
-      summary:
-        "Nurtures new project ideas with potential to grow into independent, scalable ventures.",
-      overview:
-        "The New Venture Development team focuses on nurturing fresh ideas and identifying projects with real potential to grow independently. Instead of just making the most existing projects, they work to find and support initiatives that can thrive on their own. The team collaborates with Marketing to build visibility, Finance and Corporate Relations to secure funding and partnerships, and Events and HR to recruit talent and host related activities.",
-      members: [
-        { name: "Salah Shahine", role: "Co-Lead", department: "Venture Development" },
-        { name: "Baran Ghasroddashti", role: "Co-Lead", department: "Venture Development" },
       ],
     },
   ];
