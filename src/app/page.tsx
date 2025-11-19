@@ -9,6 +9,10 @@ import enactusyellow from "@/assets/enactusyellow.png";
 
 import odette from "@/assets/odettelogo.png";
 import uwindsor from "@/assets/uwindsor.png";
+import glier from "@/assets/glier.png";
+import highline from "@/assets/highline.png";
+import johns from "@/assets/johnsOfoods.png";
+import epicentre from "@/assets/uwinEpicentre.png";
 
 import { fetchEnactusProjects } from "@/data/enactusProjects";
 import type { EnactusProject } from "@/types/enactus";
@@ -106,13 +110,13 @@ export default async function Home() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">11+</div>
+                <div className="text-3xl font-bold">23+</div>
                 <div className="text-sm text-gray-900 mt-1 font-bold">
                   PROJECTS CREATED
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">10,000+</div>
+                <div className="text-3xl font-bold">40,000+</div>
                 <div className="text-sm text-gray-900 mt-1">
                   <span className="hl">
                     <span className="hlText font-bold">STUDENTS IMPACTED</span>
@@ -159,7 +163,7 @@ export default async function Home() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight pb-15">
             OUR SUPPORTERS
           </h2>
-          <OurSupporters supporters={[uwindsor, odette]} />
+          <OurSupporters supporters={[uwindsor, odette,johns,glier,highline,epicentre]} />
         </div>
       </section>
     </div>
