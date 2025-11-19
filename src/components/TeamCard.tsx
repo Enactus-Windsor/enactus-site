@@ -1,40 +1,30 @@
 "use client";
 
 import React from "react";
-import type { EnactusMember } from "@/types/enactus";
-
-const FALLBACK_IMAGE = "/assets/enactusyellow.png";
 
 interface TeamCardProps {
-  member: EnactusMember & {
-    firstName?: string;
-    lastName?: string;
-    year?: string;
-    joined?: string;
+  member: {
+    name: string;
+    firstName: string;
+    lastName: string;
+    role: string;
+    year: string;
+    joined: string;
+    image: string;
+    linkedin: string;
+    department?: string;
   };
 }
 
 export default function TeamCard({ member }: TeamCardProps) {
-  const hasCustomImage = !!member.image && member.image.trim() !== "";
-  const imgSrc = hasCustomImage ? member.image! : FALLBACK_IMAGE;
-
-  // If you still want first + last line split:
-  const firstName = member.firstName ?? member.name.split(" ")[0] ?? "";
-  const lastName =
-    member.lastName ??
-    member.name
-      .split(" ")
-      .slice(1)
-      .join(" ");
-
   return (
     <div className="w-full bg-white overflow-hidden mx-auto flex flex-col h-full">
       {/* Image */}
       <img
         className={`w-full min-h-[12rem] max-h-[12rem] sm:min-h-[20rem] sm:max-h-[20rem] object-cover object-center ${
-          !hasCustomImage ? "opacity-50 object-scale-down" : ""
+          !member.image && "opacity-50 object-scale-down"
         }`}
-        src={imgSrc}
+        src={member.image ? member.image : "/images/jsosificonblue.webp"}
         alt={member.name}
       />
 
@@ -45,21 +35,17 @@ export default function TeamCard({ member }: TeamCardProps) {
             {member.role}
             {member.department && ` - ${member.department}`}
           </h3>
-
           <div className="flex flex-col w-full mb-4">
             <h1 className="text-lg sm:text-4xl xl:text-3xl 2xl:text-4xl font-semibold sm:font-medium font-serif">
-              {firstName || member.name}
+              {member.firstName}
             </h1>
-            {lastName && (
-              <h1 className="text-lg sm:text-4xl xl:text-3xl 2xl:text-4xl font-semibold sm:font-medium font-serif">
-                {lastName}
-              </h1>
-            )}
+            <h1 className="text-lg sm:text-4xl xl:text-3xl 2xl:text-4xl font-semibold sm:font-medium font-serif">
+              {member.lastName}
+            </h1>
           </div>
         </div>
-
         {/* LinkedIn Button */}
-        {member.linkedin && member.linkedin.trim() !== "" && (
+        {member.linkedin && (
           <a
             href={member.linkedin}
             target="_blank"
