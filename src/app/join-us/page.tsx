@@ -114,7 +114,7 @@ export default function JoinUsPage() {
           <Image src={joinusoverhead} alt="Join Enactus Windsor" className="h-64 w-96 object-cover" priority />
         </div>
 
-        <h3 className="mt-5 text-2xl font-extrabold">Mentorship Positions</h3>
+        <h3 className="mt-5 text-2xl font-extrabold">Join Our Team!</h3>
 
         <Link href="/mentorship" className="mt-6">
           <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition cursor-pointer hover:bg-gray-300">

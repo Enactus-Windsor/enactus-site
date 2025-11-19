@@ -26,7 +26,7 @@ export default function Contact() {
             <hr className="border-white/30 my-4 w-3/4" />
             <div className="text-base leading-7 space-y-1">
               <p className="font-semibold">Odette School of Business</p>
-              <p>401 Sunset Avenue, Room B06</p>
+              <p>401 Sunset Avenue, Room 102</p>
               <p>Windsor, Ontario, Canada, N9B 3P4</p>
               <a
                 href="mailto:enactus@uwindsor.ca"

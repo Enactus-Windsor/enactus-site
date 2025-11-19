@@ -12,9 +12,9 @@ export default function Mentorship() {
       <main className="flex flex-col items-center justify-center px-6 py-12 lg:px-20">
         <div className="max-w-3xl w-full flex flex-col items-center gap-10 text-center">
           <section className="space-y-4">
-            <h1 className="text-4xl font-bold">Mentorship Positions</h1>
+            <h1 className="text-4xl font-bold">Available Positions</h1>
             <p className="text-lg text-left">
-              Please review the job desscriptions provided and choose the
+              Please review the job descriptions provided and choose the
               position from the dropdown menu in the Google Forms sheet by
               clicking the button below the posting document. We appreciate your
               interest in joining Enactus Windsor!
@@ -38,7 +38,7 @@ export default function Mentorship() {
                 type="button"
                 className="px-6 py-3 rounded-full bg-yellow-400/90 text-black font-semibold hover:bg-yellow-300 transition shadow hover:shadow-md cursor-pointer"
               >
-                Apply Here for Mentorship Positions
+                Apply here to Join Our Team
               </button>
             </a>
           </section>
