@@ -30,7 +30,7 @@ export default function Mentorship() {
           </section>
           <section>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfKKAq0jtJ4ulrt_XKrnrerPX9vE193Cz0KuAhgtzwceRXARg/viewform?usp=sharing"
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=szP5EmE9GUuaTWiQId6MycYSMRX1kTpPv32GVYl5RiFUODRTMFI0U1MzQVIxTk9EV1pMMVhDQzFIMSQlQCN0PWcu"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,10 +47,10 @@ export default function Mentorship() {
             <p>
               Send an e-mail to{" "}
               <a
-                href="mailto:hr@enactuswindsor.ca"
+                href="mailto:enactus@uwindsor.ca"
                 className="text-yellow-600 hover:underline"
               >
-                hr@enactuswindsor.ca
+                enactus@uwindsor.ca
               </a>
             </p>
           </section>
