@@ -22,7 +22,7 @@ export default function Mentorship() {
           </section>
           <section className="w-full">
             <iframe
-              src="/mentorshipPdf.pdf"
+              src="/openRoles.pdf"
               className="w-full rounded-xl ring-1 ring-white/10 bg-white"
               style={{ aspectRatio: "4 / 3" }}
               aria-label="Mentorship PDF"

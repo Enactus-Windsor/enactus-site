@@ -6,6 +6,8 @@ import chewLogo from "@/assets/projectlogos/chew.png";
 import mycoliteLogo from "@/assets/projectlogos/mycolite.svg";
 import mycovoltLogo from "@/assets/projectlogos/mycovolt.png";
 import reedifyLogo from "@/assets/projectlogos/reedify.png";
+import fishLogo from "@/assets/projectlogos/fishLogo.png";
+import secRiseLogo from "@/assets/projectlogos/secRiseLogo.jpeg";
 
 export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
   return [
@@ -36,7 +38,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
     },
     {
       name: "100% Fish ",
-      banner: chewLogo,
+      banner: fishLogo,
       departmentLead: "Amal Jose",
       summary:
         "Turns discarded fish parts into sustainable, nutritious dog treats to reduce waste and support eco-friendly practices.",
@@ -86,7 +88,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
     },
     {
       name: "Second Rise",
-      banner: "", 
+      banner: secRiseLogo, 
       departmentLead: "Aneesha Bhullar & Madison Madore",
       summary:
         "Reduces opioid-related overdoses through Narcan distribution and overdose response training.",
