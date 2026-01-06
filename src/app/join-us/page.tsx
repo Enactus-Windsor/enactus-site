@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   title: "Join Us!",
 };
 
-/** Add spaces around the bullet to avoid tight joins */
+
 const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR  •  ";
 
 function WaveMarquee({
   text = PHRASE,
-  speed = "300s",        // slower = larger number
-  height = 120,         // px
+  speed = "300s",        
+  height = 120,         
   intensity = "s" as "s" | "m" | "l",
 }) {
 
@@ -29,7 +29,7 @@ function WaveMarquee({
     <div className={styles.waveMarquee} style={{ ["--h" as any]: `${height}px` }}>
       <svg
         className={styles.waveSvg}
-        viewBox="0 0 2000 180"
+        viewBox="0 0 3000 180"
         width ="100%"
         height = {height}
         preserveAspectRatio="none"
@@ -41,30 +41,42 @@ function WaveMarquee({
           {/* WAVE PATHS — make shallower by moving Y values toward 60 */}
           <path
             id="waveS"
-            d="M0,60 C150,54 300,66 450,60 S750,54 900,60 S1200,66 1350,60 S1650,54 1800,60 S2000,60 2000,60"
+            d="M0,60 C150,58 300,62 450,60 S750,58 900,60 S1200,62 1350,60 S1650,58 1800,60 S2250,58 2700,60 S3000,60 3000,60"
             pathLength={100}
           />
           <path
             id="waveM"
-            d="M0,60 C120,48 240,72 360,60 S600,48 720,60 S960,72 1080,60 S1320,48 1440,60 S1680,72 1800,60 S2000,60 2000,60"
+            d="M0,60 C120,57 240,63 360,60 S600,57 720,60 S960,63 1080,60 S1320,57 1440,60 S1680,63 1800,60 S2160,57 2520,60 S3000,60 3000,60"
             pathLength={100}
           />
           <path
             id="waveL"
-            d="M0,60 C100,42 260,78 360,60 S620,42 720,60 S980,78 1080,60 S1340,42 1440,60 S1700,78 1800,60 S2000,60 2000,60"
+            d="M0,60 C100,55 260,65 360,60 S620,55 720,60 S980,65 1080,60 S1340,55 1440,60 S1700,65 1800,60 S2320,55 2520,60 S3000,60 3000,60"
             pathLength={100}
           />
+
+          {/* Fade mask for smooth text appearance */}
+          <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="white" stopOpacity="0"/>
+            <stop offset="40%" stopColor="white" stopOpacity="1"/>
+            <stop offset="60%" stopColor="white" stopOpacity="1"/>
+            <stop offset="100%" stopColor="white" stopOpacity="0"/>
+          </linearGradient>
+          <mask id="fadeMask">
+            <rect width="100%" height="100%" fill="url(#fadeGradient)" />
+          </mask>
         </defs>
 
         {/* Multiple copies for seamless scrolling */}
         <text
           className={styles.tp}
+          mask="url(#fadeMask)"
           aria-hidden="true"
           style={{ 
           fontSize: "150px",
           letterSpacing: "5px",
-          fontFamily: '"Source Sans" Pro, Arial, sans-serif,', // set your desired font
-          fontWeight: "bold", // or "bold"
+          fontFamily: '"Source Sans" Pro, Arial, sans-serif,', 
+          fontWeight: "bold", 
           fontStretch: "expanded" ,
           transform: "scaleY(0.8)",
           }}
@@ -83,7 +95,7 @@ function WaveMarquee({
               dur={speed}
               repeatCount="indefinite"
             />
-            {text.repeat(15)}
+            {text.repeat(30)}
           </textPath>
         </text>
       </svg>
