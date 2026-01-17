@@ -77,6 +77,14 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           linkedin: "https://www.linkedin.com/in/jana-abou-hassan-ab19082b9/",
           image: "/images/pfp/Jana.jpg",
         },
+        {
+          name: "Baran Ghasroddashti",
+          role: "Vice President",
+          department: "Enterprise Development",
+          linkedin:
+            "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
+          image: "/images/pfp/BaranGhasroddashti.jpg",
+        },
         // {
         //   name: "Connor Gombar",
         //   role: "Vice President",
@@ -139,14 +147,6 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           department: "Second Rise",
           linkedin: "https://www.linkedin.com/in/madison-madore-9151522aa/",
           image: "/images/pfp/MadisonMadore.jpg",
-        },
-        {
-          name: "Baran Ghasroddashti",
-          role: "Vice President",
-          department: "Venture Development",
-          linkedin:
-            "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
-          image: "/images/pfp/BaranGhasroddashti.jpg",
         },
       ],
     },

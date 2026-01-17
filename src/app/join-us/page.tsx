@@ -1,139 +1,138 @@
-import Image from "next/image";
-import hero from "@/assets/placeholder.png";
-import Link from "next/link";
 import type { Metadata } from "next";
-import styles from "./join-us.module.css";
-import joinusbg from "@/assets/joinusbg.jpg"
 import Background from "@/components/Background";
-import joinusoverhead from "@/assets/joinusoverhead.jpg";
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=swap" rel="stylesheet" />
-
+import teamPicture from "@/assets/teamPicture.png";
 
 export const metadata: Metadata = {
-  title: "Join Us!",
+  title: "Join Us",
 };
 
-
-const PHRASE = "YOUR FUTURE × ENACTUS WINDSOR  •  ";
-
-function WaveMarquee({
-  text = PHRASE,
-  speed = "300s",        
-  height = 120,         
-  intensity = "s" as "s" | "m" | "l",
-}) {
-
-  const pathId = intensity === "l" ? "waveL" : intensity === "m" ? "waveM" : "waveS";
-
+export default function JoinUs() {
   return (
-    <div className={styles.waveMarquee} style={{ ["--h" as any]: `${height}px` }}>
-      <svg
-        className={styles.waveSvg}
-        viewBox="0 0 3000 180"
-        width ="100%"
-        height = {height}
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink"
-        aria-hidden
-      >
-        <defs>
-          {/* WAVE PATHS — make shallower by moving Y values toward 60 */}
-          <path
-            id="waveS"
-            d="M0,60 C150,58 300,62 450,60 S750,58 900,60 S1200,62 1350,60 S1650,58 1800,60 S2250,58 2700,60 S3000,60 3000,60"
-            pathLength={100}
-          />
-          <path
-            id="waveM"
-            d="M0,60 C120,57 240,63 360,60 S600,57 720,60 S960,63 1080,60 S1320,57 1440,60 S1680,63 1800,60 S2160,57 2520,60 S3000,60 3000,60"
-            pathLength={100}
-          />
-          <path
-            id="waveL"
-            d="M0,60 C100,55 260,65 360,60 S620,55 720,60 S980,65 1080,60 S1340,55 1440,60 S1700,65 1800,60 S2320,55 2520,60 S3000,60 3000,60"
-            pathLength={100}
-          />
+    <div className="relative min-h-screen text-white">
+      <Background
+        src={teamPicture}
+        overlay
+        className="bg-gradient-to-b from-black/60 via-black/40 to-black/60"
+      />
 
-          {/* Fade mask for smooth text appearance */}
-          <linearGradient id="fadeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0"/>
-            <stop offset="40%" stopColor="white" stopOpacity="1"/>
-            <stop offset="60%" stopColor="white" stopOpacity="1"/>
-            <stop offset="100%" stopColor="white" stopOpacity="0"/>
-          </linearGradient>
-          <mask id="fadeMask">
-            <rect width="100%" height="100%" fill="url(#fadeGradient)" />
-          </mask>
-        </defs>
+      <main className="mx-auto w-full max-w-6xl px-6 py-12 lg:px-10">
+        {/* HERO */}
+        <section className="text-center space-y-5">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+            Mentorship Positions
+          </h1>
+          <p className="text-white/85 max-w-3xl mx-auto leading-relaxed">
+            Please review the job descriptions provided and choose the position
+            from the dropdown menu in the Google Forms sheet by clicking the
+            button below the posting document. We appreciate your interest in
+            joining Enactus Windsor!
+          </p>
 
-        {/* Multiple copies for seamless scrolling */}
-        <text
-          className={styles.tp}
-          mask="url(#fadeMask)"
-          aria-hidden="true"
-          style={{ 
-          fontSize: "150px",
-          letterSpacing: "5px",
-          fontFamily: '"Source Sans" Pro, Arial, sans-serif,', 
-          fontWeight: "bold", 
-          fontStretch: "expanded" ,
-          transform: "scaleY(0.8)",
-          }}
-        >
-          {/* First copy - starts visible */}
-          <textPath
-            xlinkHref={`#${pathId}`}
-            startOffset="0%"
-            method="align"
-            spacing="auto"
-          >
-            <animate
-              attributeName="startOffset"
-              from="0%"
-              to="-100%"
-              dur={speed}
-              repeatCount="indefinite"
-            />
-            {text.repeat(30)}
-          </textPath>
-        </text>
-      </svg>
-    </div>
-  );
-}
-export default function JoinUsPage() {
-  return (
-    <div className="min-h-screen w-ful text-white">
-      <Background src={joinusbg} overlay />
-      <WaveMarquee text={PHRASE} speed="28s" height={180} intensity="s" />
+          <div className="pt-2">
+            <a
+              href="https://forms.office.com/Pages/ResponsePage.aspx?id=szP5EmE9GUuaTWiQId6MycYSMRX1kTpPv32GVYl5RiFUODRTMFI0U1MzQVIxTk9EV1pMMVhDQzFIMSQlQCN0PWcu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full px-10 py-4 text-lg font-semibold
+                         bg-yellow-400 text-black shadow-lg shadow-black/20
+                         hover:bg-yellow-300 transition"
+            >
+              Apply here to Join Our Team
+            </a>
+          </div>
+        </section>
 
-      {/* CONTENT */}
-      <div className="max-w-4xl mx-auto px-4 py-10 flex flex-col items-center text-center">
-        <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
-          <strong>Welcome to Enactus Windsor!</strong> We’re thrilled to invite you to our team
-          and to help make a{" "}
-          <span className="hl">
-            <span className="hlText">lasting impact</span>
-            <svg aria-hidden="true" className="hlInk" viewBox="0 0 100 20" preserveAspectRatio="none">
-              <path d="M2 14 C 25 10, 75 18, 98 12" fill="none" />
-            </svg>
-          </span>{" "}
-          in Windsor-Essex and beyond.
-        </p>
+        {/* PDF CARD */}
+        <section className="mt-10">
+          <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 overflow-hidden">
+            <div className="px-5 py-4 border-b border-white/10">
+              <p className="font-semibold">Open Roles</p>
+              <p className="text-sm text-white/70">
+                View the posting document below.
+              </p>
+            </div>
 
-        <div className="mt-8 rounded-2xl overflow-hidden shadow-lg ring-1 ring-white/10">
-          <Image src={joinusoverhead} alt="Join Enactus Windsor" className="h-64 w-96 object-cover" priority />
-        </div>
+            <div className="p-4">
+              <iframe
+                src="/openRoles.pdf"
+                className="w-full h-[600px] md:h-[720px] rounded-xl bg-white"
+                aria-label="Mentorship PDF"
+              />
+            </div>
+          </div>
+        </section>
 
-        <h3 className="mt-5 text-2xl font-extrabold">Join Our Team!</h3>
+        {/* WHY JOIN */}
+        <section className="mt-16">
+          <header className="text-center space-y-5">
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              Why Join Enactus Windsor
+            </h2>
+            <p className="text-lg text-white/85 max-w-4xl mx-auto leading-relaxed">
+              Enactus Windsor is where ambitious students come to build real
+              ventures, create real impact, and become the kind of leaders the
+              world actually needs. We’re more than a club — we’re a launchpad
+              for innovators, problem solvers, and changemakers who want to turn
+              ideas into action.
+            </p>
+          </header>
 
-        <Link href="/mentorship" className="mt-6">
-          <button className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold shadow hover:shadow-md transition cursor-pointer hover:bg-gray-300">
-            Learn More
-          </button>
-        </Link>
-      </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                title: "Build Something That Matters",
+                body: `At Enactus Windsor, you don’t just talk about problems — you design and launch solutions. Whether you’re passionate about sustainability, community development, entrepreneurship, or innovation, you’ll work on projects that create measurable impact across Windsor-Essex and beyond.`,
+              },
+              {
+                title: "Learn by Doing (Not by Sitting in a Classroom)",
+                body: `You’ll gain hands-on experience in venture creation and validation, project management and leadership, research/design and real-world problem solving, and pitching/storytelling/professional communication — the skills employers look for and the ones that help you stand out.`,
+              },
+              {
+                title: "Join a Community of Builders and Leaders",
+                body: `You’ll collaborate with a driven team of students, alumni, mentors, and industry partners who want to see you succeed. Enactus Windsor is a place where you’ll find support, accountability, and lifelong friendships.`,
+              },
+              {
+                title: "Access Exclusive Opportunities",
+                body: `Members gain access to national and international competitions, mentorship from founders and executives, workshops/networking/career-building experiences, and leadership roles that shape the future of our organization.`,
+              },
+
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 p-6"
+              >
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-white/85 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 p-6 max-w-lg w-full">
+              <h3 className="text-xl font-semibold">Make Your Degree Mean More</h3>
+              <p className="mt-3 text-white/85 leading-relaxed">Joining Enactus Windsor transforms your university experience. You'll graduate not just with a credential — but with a portfolio of real projects, real impact, and real leadership.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section className="mt-16 text-center">
+          <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 p-8">
+            <h2 className="text-2xl sm:text-3xl font-bold">
+              Questions about Applying?
+            </h2>
+            <p className="mt-3 text-white/85">
+              Send an e-mail to{" "}
+              <a
+                href="mailto:enactus@uwindsor.ca"
+                className="text-yellow-300 hover:underline"
+              >
+                enactus@uwindsor.ca
+              </a>
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

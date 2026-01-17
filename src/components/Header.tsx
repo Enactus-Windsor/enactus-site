@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <header
       className={[
-        "text-white",
+        "text-white pb-[20px]",
         isDarkHeader ? "bg-black/85 backdrop-blur" : "bg-transparent",
       ].join(" ")}
     >
