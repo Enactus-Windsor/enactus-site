@@ -11,32 +11,25 @@ type EnactusTeam = Awaited<ReturnType<typeof fetchEnactusTeams>>[number];
 
 export default function EnactusTeams() {
   const [teams, setTeams] = useState<EnactusTeam[]>([]);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     (async () => setTeams(await fetchEnactusTeams()))();
   }, []);
 
-  useEffect(() => {
-    const onScroll = () => setScrollPosition(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const enactusBlack = "/images/teambanner.jpg";
   return (
-    <div className="min-h-screen flex flex-col w-full bg-white">
-      <Image
-        src={enactusBlack}
-        alt="Enactus Team Banner"
-        width={2400}
-        height={800}
-        priority
-        className={`w-full object-cover -z-0 ${
-          scrollPosition > 0 ? "fixed" : "absolute"
-        } ${scrollPosition > 400 && "hidden"}`}
-        style={{ height: scrollPosition / 8 + 400 }}
-      />
+    <div className="relative min-h-screen flex flex-col w-full bg-white">
+      <div className="absolute inset-x-0 top-0 h-[420px] sm:h-[520px] z-0 pointer-events-none">
+        <Image
+          src={enactusBlack}
+          alt="Enactus Team Banner"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
       {/* Overlay header */}
       <div className="flex items-start justify-center mt-10 mb-40 sm:mb-64 z-10 overflow-hidden">

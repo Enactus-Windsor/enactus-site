@@ -13,6 +13,7 @@ import glier from "@/assets/glier.png";
 import highline from "@/assets/highline.png";
 import johns from "@/assets/johnsOfoods.png";
 import epicentre from "@/assets/uwinEpicentre.png";
+import rgGroup from "@/assets/rgGroup.jpeg";
 
 import { fetchEnactusProjects } from "@/data/enactusProjects";
 import type { EnactusProject } from "@/types/enactus";
@@ -163,7 +164,17 @@ export default async function Home() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight pb-15">
             OUR SUPPORTERS
           </h2>
-          <OurSupporters supporters={[uwindsor, odette,johns,glier,highline,epicentre]} />
+          <OurSupporters
+            supporters={[
+              uwindsor,
+              odette,
+              johns,
+              glier,
+              highline,
+              epicentre,
+              rgGroup,
+            ]}
+          />
         </div>
       </section>
     </div>

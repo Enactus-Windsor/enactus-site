@@ -32,7 +32,7 @@ export default function Header() {
           <Image src={logo} alt="Logo" className="h-34 w-34 object-contain" />
         </Link>
 
-        <ul className="mt-1 flex gap-8 list-none font-bold text-lg">
+        <ul className="mt-1 flex w-full flex-wrap justify-center gap-x-4 gap-y-2 list-none font-bold text-base sm:gap-8 sm:text-lg">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -40,7 +40,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   className={[
-                    "hover:underline",
+                    "whitespace-nowrap hover:underline",
                     isActive
                       ? "underline underline-offset-4 decoration-2 decoration-white"
                       : "",
