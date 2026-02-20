@@ -13,15 +13,15 @@ export default function Contact() {
     <div className="relative min-h-screen text-white">
       <Background src={contactbg} overlay />
 
-      <main className="flex flex-col items-center justify-center px-6 py-12 lg:px-20">
+      <main className="flex flex-col items-center justify-center px-6 pb-12 pt-32 lg:px-20">
         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Info */}
           <div className="space-y-6">
             <h1 className="text-4xl font-bold">Contact Us</h1>
             <p className="text-lg">
-              Have questions or suggestions? Contact us! Whether you're a
+              Have questions or suggestions? Contact us! Whether you&apos;re a
               student, community member, or potential partner, we value your
-              insights for Enactus Windsor's mission of positive social impact.
+              insights for Enactus Windsor&apos;s mission of positive social impact.
             </p>
             <hr className="border-white/30 my-4 w-3/4" />
             <div className="text-base leading-7 space-y-1">

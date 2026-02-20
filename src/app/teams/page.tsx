@@ -3,11 +3,17 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { Archivo } from "next/font/google";
 import TeamCard from "@/components/TeamCard"; // your existing card
 import { fetchEnactusTeams } from "@/data/enactusApi";
 import { toTeamCardMember } from "@/utils/enactusAdapter";
 
 type EnactusTeam = Awaited<ReturnType<typeof fetchEnactusTeams>>[number];
+
+const teamHeadlineFont = Archivo({
+  subsets: ["latin"],
+  weight: ["800"],
+});
 
 export default function EnactusTeams() {
   const [teams, setTeams] = useState<EnactusTeam[]>([]);
@@ -18,7 +24,7 @@ export default function EnactusTeams() {
 
   const enactusBlack = "/images/teambanner.jpg";
   return (
-    <div className="relative min-h-screen flex flex-col w-full bg-white">
+    <div className="relative min-h-screen flex flex-col w-full bg-white pt-24 sm:pt-28">
       <div className="absolute inset-x-0 top-0 h-[420px] sm:h-[520px] z-0 pointer-events-none">
         <Image
           src={enactusBlack}
@@ -32,10 +38,12 @@ export default function EnactusTeams() {
       </div>
 
       {/* Overlay header */}
-      <div className="flex items-start justify-center mt-10 mb-40 sm:mb-64 z-10 overflow-hidden">
+      <div className="mt-12 mb-40 flex items-start justify-center overflow-hidden z-10 sm:mt-16 sm:mb-64">
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="flex flex-col items-center justify-center w-fit bg-[rgba(255,196,0,0.9)] bg-opacity-20">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white px-16 py-2 rounded-sm shadow-md">
+            <h1
+              className={`${teamHeadlineFont.className} px-16 py-2 text-4xl font-extrabold tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl lg:text-7xl`}
+            >
               Enactus Windsor – Our Team
             </h1>
           </div>

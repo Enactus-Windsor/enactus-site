@@ -1,10 +1,7 @@
 import Image from "next/image";
-import heroImage from "@/assets/artboard.png";
-import Link from "next/link";
 import OurSupporters from "@/components/OurSupporters";
-import Background from "@/components/Background";
+import { Archivo } from "next/font/google";
 
-import people from "@/assets/people.jpg";
 import enactusyellow from "@/assets/enactusyellow.png";
 
 import odette from "@/assets/odettelogo.png";
@@ -19,40 +16,64 @@ import { fetchEnactusProjects } from "@/data/enactusProjects";
 import type { EnactusProject } from "@/types/enactus";
 import ProjectsCarousel from "@/components/ProjectsCarousel";
 
+const heroHeadlineFont = Archivo({
+  subsets: ["latin"],
+  weight: ["800"],
+});
+
 export default async function Home() {
   const projects: EnactusProject[] = await fetchEnactusProjects();
 
   return (
     <div className="min-h-screen w-full">
-      <Background src={people} overlay />
       {/* Hero */}
-      <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col items-center">
-        <img
-          src={heroImage.src}
-          alt="Local Solutions to Global Problems"
-          className="max-w-full h-auto"
-        />
+      <section className="relative isolate flex min-h-[88vh] items-end overflow-hidden sm:min-h-screen">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/homepagebk.jpg"
+            alt="Enactus Windsor Home Background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover scale-105"
+          />
+        </div>
 
-        <Link href="/join-us" className="mt-6">
-          <div className="bg-white text-gray-900 font-semibold py-3 px-24 rounded-full shadow hover:shadow-md hover:bg-gray-300 transition cursor-pointer">
-            Join Us!
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 pb-12 text-center sm:px-6 sm:pb-16">
+          <h1
+            className={`${heroHeadlineFont.className} max-w-6xl uppercase leading-[0.9] tracking-tight sm:text-6xl lg:text-7xl`}
+          >
+            <span className="block text-5xl text-[rgba(255,196,0,0.9)] [text-shadow:0_8px_22px_rgba(0,0,0,0.6)] sm:text-7xl lg:text-8xl">
+              Local Solutions To
+            </span>
+            <span className="mt-1 block text-5xl text-white [text-shadow:0_10px_24px_rgba(0,0,0,0.65)] sm:text-7xl lg:text-8xl">
+              Global Problems
+            </span>
+          </h1>
+
+          <div className="mt-5 flex items-center gap-3 sm:gap-5">
+            <span className="h-[3px] w-12 bg-[rgba(255,196,0,0.9)] sm:w-20" />
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white [text-shadow:0_3px_10px_rgba(0,0,0,0.45)] [-webkit-text-stroke:0.7px_rgba(0,0,0,0.45)] sm:text-sm">
+              Through Entrepreneurship
+            </p>
+            <span className="h-[3px] w-12 bg-[rgba(255,196,0,0.9)] sm:w-20" />
           </div>
-        </Link>
-      </div>
+        </div>
+      </section>
 
       {/* WHO WE ARE */}
       <section className="w-full bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
+          <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
             WHO WE ARE
           </h2>
 
           {/* Content Row */}
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-[minmax(0,600px)_auto] gap-8 items-start">
+          <div className="mt-8 grid grid-cols-1 items-start gap-10 md:grid-cols-[minmax(0,760px)_auto]">
             {/* Paragraph container */}
             <div className="text-black font-normal">
-              <p className="text-2xl leading-8 max-w-[600px] font-bold">
+              <p className="max-w-[760px] text-2xl font-bold leading-[1.45] sm:text-3xl">
                 Enactus Windsor is a non-profit organization run{" "}
                 <span className="hl">
                   <span className="hlText">entirely by students</span>
@@ -73,23 +94,25 @@ export default async function Home() {
             </div>
 
             {/* Logo */}
-            <div className="flex md:justify-start ml-10">
+            <div className="ml-6 flex md:justify-start">
               <Image
                 src={enactusyellow}
                 alt="Enactus Logo"
                 width={144}
                 height={144}
-                className="w-36 h-36 object-contain"
+                className="h-40 w-40 object-contain sm:h-48 sm:w-48"
               />
             </div>
           </div>
 
           {/* Stats */}
-          <div className="mt-8">
-            <div className="flex justify-center gap-14 text-gray-900">
+          <div className="mt-10">
+            <div className="flex justify-center gap-12 text-gray-900 sm:gap-16">
               <div className="text-center">
                 <span className="hlCircle">
-                  <span className="hlCircleText text-3xl font-bold">2006</span>
+                  <span className="hlCircleText text-4xl font-bold sm:text-5xl">
+                    2006
+                  </span>
                   <svg
                     className="hlCircleInk"
                     viewBox="0 0 260 140"
@@ -106,19 +129,19 @@ export default async function Home() {
                     />
                   </svg>
                 </span>
-                <div className="text-sm text-gray-900 mt-1 font-bold">
+                <div className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
                   FOUNDED IN
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">23+</div>
-                <div className="text-sm text-gray-900 mt-1 font-bold">
+                <div className="text-4xl font-bold sm:text-5xl">23+</div>
+                <div className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
                   PROJECTS CREATED
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">40,000+</div>
-                <div className="text-sm text-gray-900 mt-1">
+                <div className="text-4xl font-bold sm:text-5xl">40,000+</div>
+                <div className="mt-1 text-sm text-gray-900 sm:text-base">
                   <span className="hl">
                     <span className="hlText font-bold">STUDENTS IMPACTED</span>
                     <svg
@@ -145,12 +168,12 @@ export default async function Home() {
         </div>
 
         {/* OUR PROJECTS – carousel */}
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
+            <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
               OUR PROJECTS
             </h2>
-            <p className="mt-3 text-gray-700 max-w-2xl mx-auto">
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-700">
               Discover the student-led projects creating real impact in Windsor.
               Tap a project to learn more on our projects page.
             </p>

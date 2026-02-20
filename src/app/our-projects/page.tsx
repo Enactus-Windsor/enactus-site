@@ -5,7 +5,7 @@ export default async function OurProjects() {
   const projects = await fetchEnactusProjects();
 
   return (
-    <div className="min-h-screen bg-slate-100 py-16">
+    <div className="min-h-screen bg-slate-100 pb-16 pt-32">
       <div className="mx-auto max-w-5xl px-4">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-slate-900">Our Projects</h1>

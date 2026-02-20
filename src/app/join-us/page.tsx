@@ -15,7 +15,7 @@ export default function JoinUs() {
         className="bg-gradient-to-b from-black/60 via-black/40 to-black/60"
       />
 
-      <main className="mx-auto w-full max-w-6xl px-6 py-12 lg:px-10">
+      <main className="mx-auto w-full max-w-6xl px-6 pb-12 pt-32 lg:px-10">
         {/* HERO */}
         <section className="text-center space-y-5">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
