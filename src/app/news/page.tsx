@@ -129,7 +129,7 @@ export default function NewsPage() {
             sizes="100vw"
             className="object-cover scale-105 brightness-110"
           />
-          <div className="absolute inset-0 bg-black/42" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-36 text-center text-white sm:px-6 sm:pb-14 sm:pt-44">
