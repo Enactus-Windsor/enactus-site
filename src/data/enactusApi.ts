@@ -37,7 +37,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         },
         {
           name: "Karlie Bula",
-          role: "Founder",
+          role: "Department Lead",
           department: "Ascent",
           linkedin: "https://www.linkedin.com/in/karlie-bula-4a7332343/",
           image: "/images/pfp/KarlieBula.jpg",
@@ -119,13 +119,6 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           department: "Reedify",
           linkedin: "https://www.linkedin.com/in/harris-sami-a75b99355/",
           image: "/images/pfp/HarrisSami.jpg",
-        },
-        {
-          name: "Layla Ayoub Ghanem",
-          role: "Founder",
-          department: "MyColite",
-          linkedin: "https://www.linkedin.com/in/layla-ayoub-ghanem-1a3b20346/",
-          image: "/images/pfp/LaylaGhanem.jpg",
         },
         {
           name: "Hilary Quach",
