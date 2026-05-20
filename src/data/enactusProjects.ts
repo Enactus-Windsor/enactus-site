@@ -2,7 +2,6 @@ import type { EnactusProject } from "@/types/enactus";
 
 import ascentLogo from "@/assets/projectlogos/ascent.png";
 import centsLogo from "@/assets/projectlogos/cents.png";
-import chewLogo from "@/assets/projectlogos/chew.png";
 import mycovoltLogo from "@/assets/projectlogos/mycovolt.png";
 import reedifyLogo from "@/assets/projectlogos/reedify.png";
 import fishLogo from "@/assets/projectlogos/fishLogo.png";
@@ -61,13 +60,14 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
     {
       name: "MycoVolt",
       banner: mycovoltLogo,
-      departmentLead: "Hilary Quach",
+      departmentLead: "Jad El Hajj & Nash Wilkins",
       summary:
         "Explores mushroom-based, eco-friendly battery alternatives using fungal root structures.",
       overview:
         "MycoVolt explores the potential of mushrooms in the development of sustainable energy solutions. By using the root structure of fungi, the team is researching how organic materials can be used to create eco-friendly batteries. This innovative approach reduces reliance on harmful chemicals and metals and also opens the door for greener, biodegradable alternatives in energy storage.",
       members: [
-        { name: "Hilary Quach", role: "Co-Lead", department: "MycoVolt" },
+        { name: "Jad El Hajj", role: "Co-Lead", department: "MycoVolt" },
+        { name: "Nash Wilkins", role: "Co-Lead", department: "MycoVolt" },
       ],
     },
     {
@@ -85,13 +85,13 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
     {
       name: "Second Rise",
       banner: secRiseLogo,
-      departmentLead: "Aneesha Bhullar & Madison Madore",
+      departmentLead: "Avery Baker & Madison Madore",
       summary:
         "Reduces opioid-related overdoses through Narcan distribution and overdose response training.",
       overview:
         "Second Rise works to reduce opioid-related overdoses in Windsor-Essex by distributing Narcan kits and providing overdose response training. The team aims to equip over 200 community members with life-saving skills and expand local preparedness through workshops and outreach. By combining access and education, Second Rise empowers individuals to prevent tragedies and strengthen community safety.",
       members: [
-        { name: "Aneesha Bhullar", role: "Co-Lead", department: "Second Rise" },
+        { name: "Avery Baker", role: "Co-Lead", department: "Second Rise" },
         { name: "Madison Madore", role: "Co-Lead", department: "Second Rise" },
       ],
     },

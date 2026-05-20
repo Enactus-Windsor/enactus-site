@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Join Us",
 };
 
+const SHOW_OPEN_ROLES_PDF = false;
+
 export default function JoinUs() {
   return (
     <div className="relative min-h-screen text-white">
@@ -39,25 +41,26 @@ export default function JoinUs() {
           </div>
         </section>
 
-        {/* PDF CARD */}
-        <section className="mt-10">
-          <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 overflow-hidden">
-            <div className="px-5 py-4 border-b border-white/10">
-              <p className="font-semibold">Open Roles</p>
-              <p className="text-sm text-white/70">
-                View the posting document below.
-              </p>
-            </div>
+        {SHOW_OPEN_ROLES_PDF && (
+          <section className="mt-10">
+            <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/10">
+                <p className="font-semibold">Open Roles</p>
+                <p className="text-sm text-white/70">
+                  View the posting document below.
+                </p>
+              </div>
 
-            <div className="p-4">
-              <iframe
-                src="/openRoles.pdf"
-                className="w-full h-[600px] md:h-[720px] rounded-xl bg-white"
-                aria-label="Mentorship PDF"
-              />
+              <div className="p-4">
+                <iframe
+                  src="/openRoles.pdf"
+                  className="w-full h-[600px] md:h-[720px] rounded-xl bg-white"
+                  aria-label="Mentorship PDF"
+                />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* WHY JOIN */}
         <section className="mt-16">

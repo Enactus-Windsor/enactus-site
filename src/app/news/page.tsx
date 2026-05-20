@@ -28,6 +28,16 @@ const headlineFont = Archivo({
 
 const stories: Story[] = [
   {
+    outletName: "University of Windsor",
+    headline: "Green innovation puts Enactus Windsor on national map",
+    publicationDate: "April 23, 2026",
+    summary:
+      "Enactus Windsor achieved top results at the Enactus Canada Central Canada Regional Exposition, becoming the only institution in Central Canada and one of just three nationally to place in all four Impact Challenges. The team earned first-place finishes for 100% Fish, an initiative transforming fish-processing byproducts into sustainable products, and REEDify, which repurposes invasive phragmites into environmentally beneficial products. Following their regional success, both projects will advance to the Enactus Canada National Exposition in Montreal.",
+    href: "https://www.uwindsor.ca/news/2026-04-23/green-innovation-puts-enactus-windsor-national-map",
+    buttonLabel: "Read More",
+    imageSrc: "/images/news/apr24-2026.jpg",
+  },
+  {
     outletName: "CBC News",
     headline: "These university students are turning fish guts into dog treats",
     publicationDate: "November 24, 2025",
@@ -67,6 +77,16 @@ const stories: Story[] = [
     href: "https://www.uwindsor.ca/news/2025-11-07/youth-entrepreneurs-take-over-uwindsor-campus-market-day",
     buttonLabel: "Read More",
     imageSrc: "/images/news/nov7-2025.jpg",
+  },
+  {
+    outletName: "University of Windsor",
+    headline: "Enactus Windsor earns two awards in regional competition",
+    publicationDate: "April 2, 2025",
+    summary:
+      "Enactus Windsor joined students from across Central Canada in Mississauga to present innovative social, environmental, and entrepreneurial initiatives developed to address community needs. The team earned first runner-up for Youtopia, a student-led educational program that has helped over 600 students develop financial and entrepreneurial skills, and second runner-up for Youthrive, an initiative mentoring students through launching their own micro-businesses. Following their success at regionals, the team will advance to the Enactus Canada National Exposition in May.",
+    href: "https://www.uwindsor.ca/dailynews/2025-04-01/enactus-windsor-earns-two-awards-regional-competition",
+    buttonLabel: "Read More",
+    imageSrc: "/images/news/apr2-2025.jpg",
   },
 ];
 

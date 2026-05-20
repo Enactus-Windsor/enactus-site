@@ -33,7 +33,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     className={[
-                      "inline-flex whitespace-nowrap px-1 py-1 transition-colors",
+                      "inline-flex px-1 py-1 text-center leading-tight transition-colors sm:whitespace-nowrap",
                       isActive
                         ? "text-white underline decoration-2 underline-offset-4"
                         : "text-white/90 hover:text-yellow-200",
@@ -49,7 +49,7 @@ export default function Header() {
               <Link
                 href="/join-us"
                 className={[
-                  "inline-flex whitespace-nowrap px-1 py-1 transition-colors",
+                  "inline-flex px-1 py-1 text-center leading-tight transition-colors sm:whitespace-nowrap",
                   isJoinMenuActive
                     ? "text-white underline decoration-2 underline-offset-4"
                     : "text-white/90 hover:text-yellow-200",
@@ -77,7 +77,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 className={[
-                  "inline-flex whitespace-nowrap px-1 py-1 transition-colors",
+                  "inline-flex px-1 py-1 text-center leading-tight transition-colors sm:whitespace-nowrap",
                   pathname === "/contact"
                     ? "text-white underline decoration-2 underline-offset-4"
                     : "text-white/90 hover:text-yellow-200",

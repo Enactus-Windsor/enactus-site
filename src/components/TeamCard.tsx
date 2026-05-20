@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import type { EnactusMember } from "@/types/enactus";
 
 const FALLBACK_IMAGE = "/assets/enactusyellow.png";
@@ -30,13 +31,19 @@ export default function TeamCard({ member }: TeamCardProps) {
   return (
     <div className="w-full bg-white overflow-hidden mx-auto flex flex-col h-full">
       {/* Image */}
-      <img
-        className={`w-full min-h-[10rem] max-h-[10rem] sm:min-h-[14rem] sm:max-h-[14rem] object-cover object-center ${
-          !hasCustomImage ? "opacity-50 object-scale-down" : ""
-        }`}
-        src={imgSrc}
-        alt={member.name}
-      />
+      <div className="relative h-40 w-full sm:h-56">
+        <Image
+          className={
+            hasCustomImage
+              ? "object-cover object-center"
+              : "object-contain object-center p-4 opacity-50"
+          }
+          src={imgSrc}
+          alt={member.name}
+          fill
+          sizes="(min-width: 1024px) 33vw, 50vw"
+        />
+      </div>
 
       {/* Content */}
       <div className="flex flex-col justify-between mt-4 h-full">

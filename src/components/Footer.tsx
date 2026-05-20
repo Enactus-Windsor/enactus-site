@@ -1,13 +1,14 @@
 import React from "react";
+import Image from "next/image";
 import { TablerBrandInstagram } from "../components/icons/Instagram";
 import { TablerBrandLinkedin } from "../components/icons/Linkedin";
 import logo from "../assets/enactuswindsorblack.png";
 export default function Footer() {
   return (
-    <footer className="bg-yellow-500 border-t-2 border-blacktext-center py-8 px-4 text-black">
+    <footer className="bg-yellow-500 border-t-2 border-black text-center py-8 px-4 text-black">
       <div className="flex flex-col items-center justify-center space-y-2">
         {/* Logo placeholder */}
-        <img src={logo.src} alt="Enactus Logo" className="h-18 w-auto" />
+        <Image src={logo} alt="Enactus Logo" className="h-18 w-auto" />
 
         {/* Organization Name */}
         <p className="text-sm font-medium">University of Windsor</p>

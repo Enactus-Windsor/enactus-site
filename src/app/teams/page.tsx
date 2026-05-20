@@ -66,10 +66,12 @@ export default function EnactusTeams() {
               >
                 {/* Team header */}
                 <div className="relative w-screen mb-20 h-24">
-                  <img
-                    src={team.banner ?? "/images/enactus-default-banner.jpg"}
+                  <Image
+                    src={team.banner ?? "/images/test2.svg"}
                     alt={team.name}
-                    className="w-full h-24 z-0 object-cover"
+                    fill
+                    sizes="100vw"
+                    className="z-0 object-cover"
                   />
                   <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center font-semibold tracking-[0.25em] text-2xl sm:text-4xl text-white">
                     {team.name}
