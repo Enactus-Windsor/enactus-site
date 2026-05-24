@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import teamPicture from "@/assets/teamPicture.png";
+import teamPicture from "@/assets/teamPicture.jpg";
 
 export const metadata: Metadata = {
   title: "Join Us",
@@ -22,7 +22,7 @@ export default function JoinUs() {
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 -z-20 scale-105 object-cover object-center blur-sm"
+          className="absolute inset-0 -z-20 scale-105 object-cover object-center"
         />
         <div className="absolute inset-0 -z-10 bg-black/40" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-black/80 to-transparent" />
