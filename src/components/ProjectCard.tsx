@@ -1,19 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import type { EnactusProject } from "@/types/enactus";
 
-import enactusYellow from "@/assets/enactusyellow.png"; 
+import enactusYellow from "@/assets/enactusyellow.png";
 
 interface ProjectCardProps {
   project: EnactusProject;
+  index?: number;
+  defaultOpen?: boolean;
 }
 
 const DEFAULT_LOGO: StaticImageData = enactusYellow;
 
-export default function ProjectCard({ project }: ProjectCardProps) {
-  const [open, setOpen] = useState(false);
+export default function ProjectCard({
+  project,
+  index,
+  defaultOpen = false,
+}: ProjectCardProps) {
+  const [open, setOpen] = useState(defaultOpen);
+  const contentId = useId();
+  const displayName = project.name.trim();
 
   const rawBanner = project.banner;
   const bannerSrc =
@@ -22,86 +30,97 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       : rawBanner;
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-md">
-      {/* Collapsed header */}
+    <article className="border border-gray-200 bg-white shadow-sm">
       <button
         type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center gap-5 p-6 text-left hover:bg-slate-50 transition-colors"
+        onClick={() => setOpen((current) => !current)}
+        aria-expanded={open}
+        aria-controls={contentId}
+        className="grid w-full gap-5 border-l-4 border-[rgba(255,196,0,0.9)] p-5 text-left transition-colors hover:bg-gray-50 sm:grid-cols-[7rem_minmax(0,1fr)_3rem] sm:items-center sm:p-6"
       >
-        {/* Logo */}
-        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <div className="relative h-24 w-24 overflow-hidden border border-gray-200 bg-white p-3">
           <Image
             src={bannerSrc}
-            alt={`${project.name} logo`}
+            alt={`${displayName} logo`}
             fill
+            sizes="96px"
             className="object-contain p-3"
           />
         </div>
 
-        <div className="flex-1">
-          <h3 className="text-2xl font-semibold text-slate-900">{project.name}</h3>
-          {project.departmentLead && (
-            <p className="text-sm font-medium text-slate-700">
-              Department Lead:{" "}
-              <span className="text-yellow-500">{project.departmentLead}</span>
-            </p>
-          )}
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            {index && (
+              <span className="text-xs font-extrabold uppercase tracking-[0.22em] text-yellow-600">
+                Project {String(index).padStart(2, "0")}
+              </span>
+            )}
+            {project.departmentLead && (
+              <span className="text-xs font-bold uppercase tracking-[0.12em] text-gray-500">
+                Led by {project.departmentLead}
+              </span>
+            )}
+          </div>
+
+          <h3 className="mt-2 text-2xl font-extrabold leading-tight text-gray-950 sm:text-4xl">
+            {displayName}
+          </h3>
           {project.summary && (
-            <p className="mt-1 text-base text-slate-700">{project.summary}</p>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-gray-700">
+              {project.summary}
+            </p>
           )}
         </div>
 
-        <span className="ml-3 text-3xl leading-none text-slate-500">
-          {open ? "−" : "+"}
+        <span
+          aria-hidden="true"
+          className="flex h-12 w-12 items-center justify-center justify-self-start border border-gray-300 text-3xl font-light leading-none text-gray-950 sm:justify-self-end"
+        >
+          {open ? "-" : "+"}
         </span>
       </button>
 
-      {/* Expanded content */}
       {open && (
-        <div className="border-t border-slate-200 px-6 pb-6 pt-5">
-          {project.overview && (
-            <p className="mb-4 text-base text-slate-800">{project.overview}</p>
-          )}
+        <div
+          id={contentId}
+          className="grid gap-8 border-t border-gray-200 px-5 pb-6 pt-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_300px]"
+        >
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-yellow-600">
+              Overview
+            </p>
+            {project.overview && (
+              <p className="mt-3 max-w-3xl text-base leading-7 text-gray-800">
+                {project.overview}
+              </p>
+            )}
+          </div>
 
           {project.members?.length ? (
-            <div>
-              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Team Members
+            <aside className="border-l-4 border-[rgba(255,196,0,0.9)] bg-gray-50 p-5">
+              <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-gray-500">
+                Project Leadership
               </h4>
-              <ul className="grid gap-4 sm:grid-cols-2">
-                {project.members.map((m) => (
+              <ul className="mt-4 space-y-4">
+                {project.members.map((member) => (
                   <li
-                    key={m.name}
-                    className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4"
+                    key={member.name}
+                    className="border-t border-gray-200 pt-4 first:border-t-0 first:pt-0"
                   >
-                    {/* <div className="relative h-10 w-10 overflow-hidden rounded-full bg-yellow-400/20 flex-shrink-0" /> */}
-                    <div className="min-w-0">
-                      <p className="truncate text-base font-medium text-slate-900">
-                        {m.name}
-                      </p>
-                      <p className="truncate text-sm text-slate-600">
-                        {m.role}
-                        {m.department ? ` • ${m.department}` : ""}
-                      </p>
-                      {/* {m.linkedin && (
-                        <a
-                          href={m.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-0.5 inline-block text-xs font-medium text-yellow-600 hover:text-yellow-500 hover:underline"
-                        >
-                          LinkedIn →
-                        </a>
-                      )} */}
-                    </div>
+                    <p className="text-base font-bold text-gray-950">
+                      {member.name}
+                    </p>
+                    <p className="mt-1 text-sm leading-6 text-gray-600">
+                      {member.role}
+                      {member.department ? ` / ${member.department.trim()}` : ""}
+                    </p>
                   </li>
                 ))}
               </ul>
-            </div>
+            </aside>
           ) : null}
         </div>
       )}
-    </div>
+    </article>
   );
 }

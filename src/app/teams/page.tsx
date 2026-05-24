@@ -25,20 +25,20 @@ export default function EnactusTeams() {
   const enactusBlack = "/images/teambanner.jpg";
   return (
     <div className="relative min-h-screen flex flex-col w-full bg-white pt-24 sm:pt-28">
-      <div className="absolute inset-x-0 top-0 h-[420px] sm:h-[520px] z-0 pointer-events-none">
+      <div className="absolute inset-x-0 top-0 h-[520px] sm:h-[700px] lg:h-[760px] z-0 pointer-events-none">
         <Image
           src={enactusBlack}
           alt="Enactus Team Banner"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_30%]"
         />
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Overlay header */}
-      <div className="mt-12 mb-40 flex items-start justify-center overflow-hidden z-10 sm:mt-16 sm:mb-64">
+      <div className="mt-12 mb-64 flex items-start justify-center overflow-hidden z-10 sm:mt-16 sm:mb-[28rem] lg:mb-[32rem]">
         <div className="flex flex-col items-center justify-center gap-2">
           <div className="flex flex-col items-center justify-center w-fit bg-[rgba(255,196,0,0.9)] bg-opacity-20">
             <h1
@@ -66,10 +66,12 @@ export default function EnactusTeams() {
               >
                 {/* Team header */}
                 <div className="relative w-screen mb-20 h-24">
-                  <img
-                    src={team.banner ?? "/images/enactus-default-banner.jpg"}
+                  <Image
+                    src={team.banner ?? "/images/test2.svg"}
                     alt={team.name}
-                    className="w-full h-24 z-0 object-cover"
+                    fill
+                    sizes="100vw"
+                    className="z-0 object-cover"
                   />
                   <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center font-semibold tracking-[0.25em] text-2xl sm:text-4xl text-white">
                     {team.name}
@@ -78,7 +80,7 @@ export default function EnactusTeams() {
 
                 {/* Members (adapter -> TeamCard) */}
                 <div className="flex justify-center">
-                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-20 w-full px-4 sm:px-10 md:px-40 xl:px-64 2xl:px-0 2xl:w-[50vw] h-full text-black">
+                  <div className="grid w-full max-w-[1830px] grid-cols-2 gap-10 px-6 text-black sm:gap-20 sm:px-10 md:px-16 lg:grid-cols-3 xl:px-20 2xl:px-0">
                     {team.members.map((m, idx) => (
                       <TeamCard key={idx} member={toTeamCardMember(m)} />
                     ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import type { EnactusMember } from "@/types/enactus";
 
 const FALLBACK_IMAGE = "/assets/enactusyellow.png";
@@ -28,18 +29,24 @@ export default function TeamCard({ member }: TeamCardProps) {
       .join(" ");
 
   return (
-    <div className="w-full bg-white overflow-hidden mx-auto flex flex-col h-full">
+    <div className="w-full bg-white overflow-hidden mx-auto flex flex-col">
       {/* Image */}
-      <img
-        className={`w-full min-h-[10rem] max-h-[10rem] sm:min-h-[14rem] sm:max-h-[14rem] object-cover object-center ${
-          !hasCustomImage ? "opacity-50 object-scale-down" : ""
-        }`}
-        src={imgSrc}
-        alt={member.name}
-      />
+      <div className="relative aspect-[6/5] w-full">
+        <Image
+          className={
+            hasCustomImage
+              ? "object-cover object-center"
+              : "object-contain object-center p-4 opacity-50"
+          }
+          src={imgSrc}
+          alt={member.name}
+          fill
+          sizes="(min-width: 1024px) 33vw, 50vw"
+        />
+      </div>
 
       {/* Content */}
-      <div className="flex flex-col justify-between mt-4 h-full">
+      <div className="mt-6 flex flex-col">
         <div className="flex flex-col">
           <h3 className="text-sm sm:text-xl font-serif text-primary min-h-12 sm:min-h-14 mb-2">
             {member.role}
@@ -64,7 +71,7 @@ export default function TeamCard({ member }: TeamCardProps) {
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center mt-4"
+            className="mt-10 inline-flex items-center sm:mt-12"
           >
             <div className="p-1 w-8 h-8 sm:w-12 sm:h-12 bg-white text-[#0A66C2] text-sm font-medium rounded hover:bg-[#0A66C2] hover:text-white transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
