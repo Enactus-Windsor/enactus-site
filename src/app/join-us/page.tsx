@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Background from "@/components/Background";
-import teamPicture from "@/assets/teamPicture.png";
+import Image from "next/image";
+import teamPicture from "@/assets/teamPicture.jpg";
 
 export const metadata: Metadata = {
   title: "Join Us",
@@ -8,53 +8,64 @@ export const metadata: Metadata = {
 
 const SHOW_OPEN_ROLES_PDF = false;
 
+const applicationUrl =
+  "https://forms.office.com/Pages/ResponsePage.aspx?id=szP5EmE9GUuaTWiQId6MycYSMRX1kTpPv32GVYl5RiFUODRTMFI0U1MzQVIxTk9EV1pMMVhDQzFIMSQlQCN0PWcu";
+
 export default function JoinUs() {
   return (
-    <div className="relative min-h-screen text-white">
-      <Background
-        src={teamPicture}
-        overlay
-        className="bg-gradient-to-b from-black/60 via-black/40 to-black/60"
-      />
+    <div className="min-h-screen bg-white text-black">
+      {/* HERO */}
+      <section className="relative isolate flex min-h-[76vh] items-end overflow-hidden bg-black pt-32 sm:min-h-[82vh]">
+        <Image
+          src={teamPicture}
+          alt="Join Enactus Windsor"
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-20 scale-105 object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-black/40" />
+        <div className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-black/80 to-transparent" />
 
-      <main className="mx-auto w-full max-w-6xl px-6 pb-12 pt-32 lg:px-10">
-        {/* HERO */}
-        <section className="text-center space-y-5">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Join Enactus Windsor
-          </h1>
-          <p className="text-white/85 max-w-3xl mx-auto leading-relaxed">
-            Review open positions and apply using the link below.
-          </p>
+        <div className="mx-auto w-full max-w-6xl px-6 pb-14 sm:px-8 sm:pb-16 lg:px-10">
+          <div className="max-w-3xl border-l-8 border-[rgba(255,196,0,0.9)] bg-black px-6 py-7 text-left shadow-[0_18px_50px_-28px_rgba(0,0,0,0.95)] sm:px-8 sm:py-8">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Join Enactus Windsor
+            </h1>
+            <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-white/85 sm:text-lg">
+              Review open positions and apply using the link below.
+            </p>
 
-          <div className="pt-2">
             <a
-              href="https://forms.office.com/Pages/ResponsePage.aspx?id=szP5EmE9GUuaTWiQId6MycYSMRX1kTpPv32GVYl5RiFUODRTMFI0U1MzQVIxTk9EV1pMMVhDQzFIMSQlQCN0PWcu"
+              href={applicationUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full px-10 py-4 text-lg font-semibold
-                         bg-yellow-400 text-black shadow-lg shadow-black/20
-                         hover:bg-yellow-300 transition"
+              className="mt-8 inline-flex items-center justify-center rounded bg-[rgba(255,196,0,0.95)] px-8 py-4 text-base font-bold text-black shadow-[0_16px_36px_-20px_rgba(0,0,0,0.9)] transition hover:bg-yellow-300 sm:px-10 sm:text-lg"
             >
               Click Here to Review Open Roles and Apply
             </a>
           </div>
-        </section>
+        </div>
+      </section>
 
+      <main className="w-full">
         {SHOW_OPEN_ROLES_PDF && (
-          <section className="mt-10">
-            <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 overflow-hidden">
-              <div className="px-5 py-4 border-b border-white/10">
-                <p className="font-semibold">Open Roles</p>
-                <p className="text-sm text-white/70">
+          <section className="bg-white px-6 py-14 sm:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-6xl">
+              <div className="mb-6 border-l-8 border-[rgba(255,196,0,0.9)] pl-5">
+                <p className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl">
+                  Open Roles
+                </p>
+                <p className="mt-2 text-sm font-medium text-neutral-600 sm:text-base">
                   View the posting document below.
                 </p>
               </div>
 
-              <div className="p-4">
+              <div className="overflow-hidden rounded border border-neutral-200 bg-white shadow-[0_18px_45px_-32px_rgba(0,0,0,0.55)]">
+                <div className="h-2 bg-[rgba(255,196,0,0.9)]" />
                 <iframe
                   src="/openRoles.pdf"
-                  className="w-full h-[600px] md:h-[720px] rounded-xl bg-white"
+                  className="h-[600px] w-full bg-white md:h-[720px]"
                   aria-label="Mentorship PDF"
                 />
               </div>
@@ -63,13 +74,14 @@ export default function JoinUs() {
         )}
 
         {/* WHY JOIN */}
-        <section className="mt-16">
-          <div className="rounded-3xl bg-black/35 backdrop-blur-md ring-1 ring-white/20 p-6 sm:p-8 lg:p-10">
-            <header className="text-center space-y-5">
-              <h2 className="text-3xl sm:text-4xl font-bold">
+        <section className="bg-neutral-50 px-6 py-16 sm:px-8 lg:px-10">
+          <div className="mx-auto w-full max-w-6xl">
+            <header className="max-w-4xl">
+              <div className="mb-5 h-2 w-24 bg-[rgba(255,196,0,0.9)]" />
+              <h2 className="text-4xl font-extrabold tracking-tight text-black sm:text-5xl">
                 Why Join Enactus Windsor
               </h2>
-              <p className="text-lg text-white/85 max-w-4xl mx-auto leading-relaxed">
+              <p className="mt-5 text-lg font-medium leading-relaxed text-neutral-700 sm:text-xl">
                 Enactus Windsor is where ambitious students come to build real
                 ventures, create real impact, and become the kind of leaders the
                 world actually needs. We’re more than a club, we’re a launchpad
@@ -99,25 +111,27 @@ export default function JoinUs() {
               ].map((item, index) => (
                 <article
                   key={item.title}
-                  className="h-full rounded-2xl border border-white/15 bg-white/5 p-6 shadow-[0_12px_30px_-18px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/60 hover:bg-white/10"
+                  className="h-full rounded border border-neutral-200 bg-white p-6 shadow-[0_16px_34px_-30px_rgba(0,0,0,0.7)] transition duration-300 hover:-translate-y-1 hover:border-yellow-400"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-yellow-200/90">
+                  <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-[rgba(255,196,0,0.95)]">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-white/85 leading-relaxed">
+                  <h3 className="mt-3 text-xl font-extrabold leading-tight text-black">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 leading-relaxed text-neutral-700">
                     {item.body}
                   </p>
                 </article>
               ))}
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <div className="w-full max-w-2xl rounded-2xl border border-yellow-300/40 bg-gradient-to-r from-yellow-300/20 via-yellow-200/10 to-yellow-300/20 p-6 text-center">
-                <h3 className="text-2xl font-semibold text-white">
+            <div className="mt-10 border-l-8 border-[rgba(255,196,0,0.9)] bg-black p-6 text-white sm:p-8">
+              <div className="mx-auto max-w-3xl text-center">
+                <h3 className="text-2xl font-extrabold text-white sm:text-3xl">
                   Make Your Degree Mean More
                 </h3>
-                <p className="mt-3 text-white/90 leading-relaxed">
+                <p className="mt-4 leading-relaxed text-white/90">
                   Joining Enactus Windsor transforms your university experience.
                   You will graduate not just with a credential, but with a
                   portfolio of real projects, real impact, and real leadership.
@@ -128,20 +142,28 @@ export default function JoinUs() {
         </section>
 
         {/* CONTACT */}
-        <section className="mt-16 text-center">
-          <div className="rounded-2xl bg-white/10 backdrop-blur-md ring-1 ring-white/15 p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold">
+        <section className="bg-black px-6 py-16 text-center text-white sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               Questions about Applying?
             </h2>
-            <p className="mt-3 text-white/85">
+            <p className="mt-4 text-white/85">
               Send an e-mail to{" "}
               <a
                 href="mailto:enactus@uwindsor.ca"
-                className="text-yellow-300 hover:underline"
+                className="font-semibold text-[rgba(255,196,0,0.95)] hover:underline"
               >
                 enactus@uwindsor.ca
               </a>
             </p>
+            <a
+              href={applicationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded bg-[rgba(255,196,0,0.95)] px-8 py-4 text-base font-bold text-black transition hover:bg-yellow-300 sm:px-10 sm:text-lg"
+            >
+              Click Here to Review Open Roles and Apply
+            </a>
           </div>
         </section>
       </main>
