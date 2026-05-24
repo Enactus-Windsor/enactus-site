@@ -73,13 +73,17 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
     {
       name: "REEDify",
       banner: reedifyLogo,
-      departmentLead: "Harris Sami",
+      departmentLead: "Anthony vanier",
       summary:
         "Transforms invasive reeds into useful products while supporting Indigenous communities.",
       overview:
         "REEDify is all about creating impact through resourcefulness and connection. The team turns invasive reed species into useful products like bug repellents and fire logs, reducing environmental harm while supporting Indigenous communities like the Caldwell First Nation. With a focus on sustainability and social responsibility.",
       members: [
-        { name: "Harris Sami", role: "Department Lead", department: "REEDify" },
+        {
+          name: "Anthony Vanier",
+          role: "Department Lead",
+          department: "REEDify",
+        },
       ],
     },
     {
