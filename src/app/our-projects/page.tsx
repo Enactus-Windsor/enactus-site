@@ -8,8 +8,18 @@ export default async function OurProjects() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-gray-950">
-      <section className="bg-black px-4 pb-14 pt-36 text-white sm:px-6 sm:pb-16 sm:pt-40">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative isolate overflow-hidden bg-black px-4 pb-14 pt-36 text-white sm:px-6 sm:pb-16 sm:pt-40">
+        <Image
+          src="/images/projectsBk.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-20 object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-black/70" />
+
+        <div className="relative mx-auto max-w-6xl">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.28em] text-[rgba(255,196,0,0.9)]">
               Student-Led Impact
@@ -67,12 +77,12 @@ export default async function OurProjects() {
                   key={project.name}
                   className="flex min-h-36 flex-col items-center justify-center bg-white px-4 py-5 text-center"
                 >
-                  <div className="relative h-20 w-20">
+                  <div className="relative h-16 w-16">
                     <Image
                       src={logoSrc}
                       alt={`${project.name.trim()} logo`}
                       fill
-                      sizes="80px"
+                      sizes="64px"
                       className="object-contain"
                     />
                   </div>

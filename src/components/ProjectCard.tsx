@@ -36,15 +36,15 @@ export default function ProjectCard({
         onClick={() => setOpen((current) => !current)}
         aria-expanded={open}
         aria-controls={contentId}
-        className="grid w-full gap-5 border-l-4 border-[rgba(255,196,0,0.9)] p-5 text-left transition-colors hover:bg-gray-50 sm:grid-cols-[7rem_minmax(0,1fr)_3rem] sm:items-center sm:p-6"
+        className="grid w-full gap-5 border-l-4 border-[rgba(255,196,0,0.9)] p-5 text-left transition-colors hover:bg-gray-50 sm:grid-cols-[6rem_minmax(0,1fr)_3rem] sm:items-center sm:p-6"
       >
-        <div className="relative h-24 w-24 overflow-hidden border border-gray-200 bg-white p-3">
+        <div className="relative h-20 w-20 overflow-hidden border border-gray-200 bg-white p-2.5">
           <Image
             src={bannerSrc}
             alt={`${displayName} logo`}
             fill
-            sizes="96px"
-            className="object-contain p-3"
+            sizes="80px"
+            className="object-contain p-2.5"
           />
         </div>
 
