@@ -68,14 +68,14 @@ export default async function OurProjects() {
           <p className="mb-5 text-center text-sm font-bold uppercase tracking-[0.24em] text-black/75">
             Current Projects
           </p>
-          <div className="grid grid-cols-2 gap-px bg-black/15 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="flex flex-wrap justify-center">
             {projects.map((project) => {
               const logoSrc = project.banner || enactusYellow;
 
               return (
                 <div
                   key={project.name}
-                  className="flex min-h-36 flex-col items-center justify-center bg-white px-4 py-5 text-center"
+                  className="flex min-h-36 basis-1/2 flex-col items-center justify-center bg-white px-4 py-5 text-center ring-1 ring-inset ring-black/15 sm:basis-1/3 lg:basis-1/6"
                 >
                   <div className="relative h-16 w-16">
                     <Image
