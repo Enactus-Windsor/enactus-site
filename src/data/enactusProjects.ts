@@ -6,6 +6,8 @@ import mycovoltLogo from "@/assets/projectlogos/mycovolt.png";
 import reedifyLogo from "@/assets/projectlogos/reedify.png";
 import fishLogo from "@/assets/projectlogos/fishLogo.png";
 import secRiseLogo from "@/assets/projectlogos/secRiseLogo.jpeg";
+import crispLabsLogo from "@/assets/projectlogos/CrispLabs.png";
+import sparkLogo from "@/assets/projectlogos/SparkLogo.jpg";
 
 export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
   return [
@@ -38,6 +40,22 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
           name: "Matthew Najem",
           role: "Department Lead",
           department: "CentsAbility",
+        },
+      ],
+    },
+    {
+      name: "Crisp Labs",
+      banner: crispLabsLogo,
+      departmentLead: "Ryan Gadoury",
+      summary:
+        "Upcycles rejected produce into business-ready ingredients that reduce food waste and create new value.",
+      overview:
+        "Crisp Labs is a produce upcycling and ingredient innovation project focused on turning rejected agricultural produce into secondary products and ingredients. Instead of focusing only on direct-to-consumer snacks, the project is exploring a B2B ingredient model where produce can be processed into powders, dehydrated ingredients, and other usable materials that can be sold to businesses.",
+      members: [
+        {
+          name: "Ryan Gadoury",
+          role: "Department Lead",
+          department: "Crisp Labs",
         },
       ],
     },
@@ -97,6 +115,18 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         { name: "Avery Baker", role: "Co-Lead", department: "Second Rise" },
         { name: "Madison Madore", role: "Co-Lead", department: "Second Rise" },
+      ],
+    },
+    {
+      name: "Spark",
+      banner: sparkLogo,
+      departmentLead: "Dhruv Sapra",
+      summary:
+        "Helps student founders build early-stage social ventures through mentorship and hands-on learning.",
+      overview:
+        "Spark empowers student founders to develop sustainable, community-focused initiatives through venture building, mentorship, and hands-on learning. The program helps transform early-stage ideas into impactful social enterprises that can be adopted and grown by Enactus Windsor teams.",
+      members: [
+        { name: "Dhruv Sapra", role: "Department Lead", department: "Spark" },
       ],
     },
   ];

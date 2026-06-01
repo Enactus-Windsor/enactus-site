@@ -94,14 +94,14 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         },
         {
           name: "Nash Wilkins",
-          role: "Project Manager",
+          role: "Co-Project Manager",
           department: "MycoVolt",
           linkedin: "https://www.linkedin.com/in/nash-wilkins/",
           image: "/images/pfp/NashWilkins.jpg",
         },
         {
           name: "Jad El Hajj",
-          role: "Project Manager",
+          role: "Co-Project Manager",
           department: "MycoVolt",
           linkedin: "https://www.linkedin.com/in/jad-el-hajj-ab1133287/",
           image: "",
@@ -114,11 +114,11 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         //   image: "/images/pfp/MujtabaHammoud.jpg",
         // },
         {
-          name: "Harris Sami",
+          name: "Anthony Vanier",
           role: "Founder",
           department: "Reedify",
-          linkedin: "https://www.linkedin.com/in/harris-sami-a75b99355/",
-          image: "/images/pfp/HarrisSami.jpg",
+          linkedin: "https://www.linkedin.com/in/anthony-vanier/",
+          image: "/images/pfp/AnthonyVanier.jpg",
         },
         {
           name: "Madison Madore",
