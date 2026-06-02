@@ -147,7 +147,7 @@ export default function NewsPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover scale-105 brightness-110"
+            className="object-cover scale-105 brightness-[0.82]"
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>

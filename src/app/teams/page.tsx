@@ -80,7 +80,7 @@ export default function EnactusTeams() {
 
                 {/* Members (adapter -> TeamCard) */}
                 <div className="flex justify-center">
-                  <div className="grid w-full max-w-[1830px] grid-cols-2 gap-10 px-6 text-black sm:gap-20 sm:px-10 md:px-16 lg:grid-cols-3 xl:px-20 2xl:px-0">
+                  <div className="grid w-full max-w-[1500px] grid-cols-2 gap-x-6 gap-y-12 px-6 text-black sm:grid-cols-3 sm:px-10 md:px-16 lg:grid-cols-4 xl:px-20 2xl:px-0">
                     {team.members.map((m, idx) => (
                       <TeamCard key={idx} member={toTeamCardMember(m)} />
                     ))}

@@ -35,7 +35,7 @@ export default async function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover scale-105"
+            className="object-cover scale-105 brightness-[0.55]"
           />
         </div>
 
@@ -134,7 +134,7 @@ export default async function Home() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold sm:text-5xl">23+</div>
+                <div className="text-4xl font-bold sm:text-5xl">26+</div>
                 <div className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
                   PROJECTS CREATED
                 </div>

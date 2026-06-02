@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import type { EnactusProject } from "@/types/enactus";
 
@@ -10,6 +10,7 @@ interface ProjectCardProps {
   project: EnactusProject;
   index?: number;
   defaultOpen?: boolean;
+  anchorId?: string;
 }
 
 const DEFAULT_LOGO: StaticImageData = enactusYellow;
@@ -18,10 +19,26 @@ export default function ProjectCard({
   project,
   index,
   defaultOpen = false,
+  anchorId,
 }: ProjectCardProps) {
   const [open, setOpen] = useState(defaultOpen);
   const contentId = useId();
   const displayName = project.name.trim();
+
+  useEffect(() => {
+    if (!anchorId) return;
+
+    const openFromHash = () => {
+      if (window.location.hash === `#${anchorId}`) {
+        setOpen(true);
+      }
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, [anchorId]);
 
   const rawBanner = project.banner;
   const bannerSrc =
@@ -30,7 +47,10 @@ export default function ProjectCard({
       : rawBanner;
 
   return (
-    <article className="border border-gray-200 bg-white shadow-sm">
+    <article
+      id={anchorId}
+      className="scroll-mt-28 border border-gray-200 bg-white shadow-sm"
+    >
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
