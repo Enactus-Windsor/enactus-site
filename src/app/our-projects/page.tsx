@@ -1,7 +1,16 @@
 import Image from "next/image";
 import { fetchEnactusProjects } from "@/data/enactusProjects";
 import ProjectCard from "@/components/ProjectCard";
+import ProjectLogoTile from "@/components/ProjectLogoTile";
 import enactusYellow from "@/assets/enactusyellow.png";
+
+function projectAnchorId(projectName: string) {
+  return `project-${projectName
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")}`;
+}
 
 export default async function OurProjects() {
   const projects = await fetchEnactusProjects();
@@ -45,7 +54,7 @@ export default async function OurProjects() {
             </div>
             <div className="border-y border-white/20 py-5 sm:border-x sm:border-y-0">
               <p className="text-4xl font-extrabold text-[rgba(255,196,0,0.9)]">
-                23+
+                26+
               </p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[0.14em] text-white/75">
                 Projects Created
@@ -71,25 +80,15 @@ export default async function OurProjects() {
           <div className="flex flex-wrap justify-center">
             {projects.map((project) => {
               const logoSrc = project.banner || enactusYellow;
+              const anchorId = projectAnchorId(project.name);
 
               return (
-                <div
+                <ProjectLogoTile
                   key={project.name}
-                  className="flex min-h-36 basis-1/2 flex-col items-center justify-center bg-white px-4 py-5 text-center ring-1 ring-inset ring-black/15 sm:basis-1/3 lg:basis-1/6"
-                >
-                  <div className="relative h-16 w-16">
-                    <Image
-                      src={logoSrc}
-                      alt={`${project.name.trim()} logo`}
-                      fill
-                      sizes="64px"
-                      className="object-contain"
-                    />
-                  </div>
-                  <p className="mt-3 text-sm font-bold text-gray-950">
-                    {project.name.trim()}
-                  </p>
-                </div>
+                  anchorId={anchorId}
+                  logoSrc={logoSrc}
+                  projectName={project.name.trim()}
+                />
               );
             })}
           </div>
@@ -119,7 +118,7 @@ export default async function OurProjects() {
                 key={project.name}
                 project={project}
                 index={index + 1}
-                defaultOpen={index === 0}
+                anchorId={projectAnchorId(project.name)}
               />
             ))}
           </div>

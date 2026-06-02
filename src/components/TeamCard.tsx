@@ -31,7 +31,7 @@ export default function TeamCard({ member }: TeamCardProps) {
   return (
     <div className="w-full bg-white overflow-hidden mx-auto flex flex-col">
       {/* Image */}
-      <div className="relative aspect-[6/5] w-full">
+      <div className="relative aspect-[4/5] w-full">
         <Image
           className={
             hasCustomImage
@@ -41,24 +41,25 @@ export default function TeamCard({ member }: TeamCardProps) {
           src={imgSrc}
           alt={member.name}
           fill
-          sizes="(min-width: 1024px) 33vw, 50vw"
+          sizes="(min-width: 1536px) 700px, (min-width: 1024px) 50vw, (min-width: 640px) 67vw, 100vw"
+          quality={90}
         />
       </div>
 
       {/* Content */}
       <div className="mt-6 flex flex-col">
         <div className="flex flex-col">
-          <h3 className="text-sm sm:text-xl font-serif text-primary min-h-12 sm:min-h-14 mb-2">
+          <h3 className="text-sm font-serif text-primary min-h-12 mb-2 sm:text-base xl:text-lg">
             {member.role}
             {member.department && ` - ${member.department}`}
           </h3>
 
           <div className="flex flex-col w-full mb-4">
-            <h1 className="text-lg sm:text-4xl xl:text-3xl 2xl:text-4xl font-semibold sm:font-medium font-serif">
+            <h1 className="text-lg font-semibold font-serif sm:text-2xl xl:text-3xl sm:font-medium">
               {firstName || member.name}
             </h1>
             {lastName && (
-              <h1 className="text-lg sm:text-4xl xl:text-3xl 2xl:text-4xl font-semibold sm:font-medium font-serif">
+              <h1 className="text-lg font-semibold font-serif sm:text-2xl xl:text-3xl sm:font-medium">
                 {lastName}
               </h1>
             )}

@@ -43,11 +43,11 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/MatthewNajem.jpg",
         },
         {
-          name: "Amal Jose",
-          role: "Founder",
+          name: "Trevor Kloppenburg ",
+          role: "Project Manager",
           department: "100% Fish ",
-          linkedin: "https://www.linkedin.com/in/amalljose/",
-          image: "/images/pfp/AmalJose.jpg",
+          linkedin: "https://www.linkedin.com/in/trevor-kloppenburg/",
+          image: "",
         },
         {
           name: "Anita Jafari",
@@ -106,13 +106,6 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           linkedin: "https://www.linkedin.com/in/jad-el-hajj-ab1133287/",
           image: "",
         },
-        // {
-        //   name: "Mujtaba Hammoud",
-        //   role: "Vice President",
-        //   department: "Legal and Compliance",
-        //   linkedin: "https://www.linkedin.com/in/mujtaba-hammoud-9095412a9/",
-        //   image: "/images/pfp/MujtabaHammoud.jpg",
-        // },
         {
           name: "Anthony Vanier",
           role: "Founder",
@@ -133,6 +126,13 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           department: "Second Rise",
           linkedin: "https://www.linkedin.com/in/avery-baker-763108341/",
           image: "/images/pfp/AveryBaker.jpg",
+        },
+        {
+          name: "Dhruv Sapra",
+          role: "Project Manager",
+          department: "Second Rise",
+          linkedin: "https://www.linkedin.com/in/dhruv-sapra-3890211bb/",
+          image: "/images/pfp/DhruvSapra.jpg",
         },
       ],
     },
