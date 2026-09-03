@@ -11,6 +11,7 @@ import highline from "@/assets/highline.png";
 import johns from "@/assets/johnsOfoods.png";
 import epicentre from "@/assets/uwinEpicentre.png";
 import rgGroup from "@/assets/rgGroup.jpeg";
+import cfk from "@/assets/cfk.jpeg";
 
 import { fetchEnactusProjects } from "@/data/enactusProjects";
 import type { EnactusProject } from "@/types/enactus";
@@ -196,6 +197,7 @@ export default async function Home() {
               highline,
               epicentre,
               rgGroup,
+              cfk,
             ]}
           />
         </div>
