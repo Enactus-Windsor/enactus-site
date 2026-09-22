@@ -56,7 +56,7 @@ export default function AlumniDirectory() {
       </header>
 
       {/* Filter bar */}
-      <div className="sticky top-[132px] z-20 border-b border-[#ececec] bg-white/90 backdrop-blur-[8px] sm:top-[98px]">
+      <div className="sticky top-[var(--site-header-h,98px)] z-20 border-b border-[#ececec] bg-white/90 backdrop-blur-[8px]">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center gap-4 px-5 py-4 sm:px-10">
           {years.length > 0 && (
             <>

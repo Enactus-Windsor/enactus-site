@@ -22,13 +22,40 @@ function Fact({ label, value }: { label: string; value?: string }) {
   );
 }
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
 export default function AlumniModal({ alumnus, onClose }: AlumniModalProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const pressStartedOnOverlay = useRef(false);
 
   useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab" || !dialogRef.current) return;
+      // Keep keyboard focus cycling inside the dialog.
+      const focusables = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE),
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !dialogRef.current.contains(active))) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && (active === last || !dialogRef.current.contains(active))) {
+        e.preventDefault();
+        first.focus();
+      }
     };
+
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKey);
@@ -36,19 +63,27 @@ export default function AlumniModal({ alumnus, onClose }: AlumniModalProps) {
     return () => {
       document.body.style.overflow = prevOverflow;
       document.removeEventListener("keydown", onKey);
+      opener?.focus();
     };
   }, [onClose]);
 
   return (
     <div
-      onClick={onClose}
+      // Only a press that both starts and ends on the backdrop closes the dialog,
+      // so drag-selecting text out of the panel doesn't dismiss it.
+      onMouseDown={(e) => {
+        pressStartedOnOverlay.current = e.target === e.currentTarget;
+      }}
+      onClick={(e) => {
+        if (pressStartedOnOverlay.current && e.target === e.currentTarget) onClose();
+      }}
       className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-neutral-900/55 px-5 pb-10 pt-[5vh] backdrop-blur-[3px] animate-[almFadeIn_.18s_ease]"
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="alumni-modal-name"
-        onClick={(e) => e.stopPropagation()}
+        ref={dialogRef}
         className="relative w-full max-w-[880px] overflow-hidden rounded-[14px] bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,.5)] animate-[almPop_.28s_cubic-bezier(.16,.84,.44,1)]"
       >
         <button
