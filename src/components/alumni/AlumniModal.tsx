@@ -84,17 +84,22 @@ export default function AlumniModal({ alumnus, onClose }: AlumniModalProps) {
         aria-modal="true"
         aria-labelledby="alumni-modal-name"
         ref={dialogRef}
-        className="relative w-full max-w-[880px] overflow-hidden rounded-[14px] bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,.5)] animate-[almPop_.28s_cubic-bezier(.16,.84,.44,1)]"
+        // overflow-clip (not hidden) keeps the rounded corners without making the
+        // dialog a scroll container, so the sticky close button tracks the overlay.
+        className="relative w-full max-w-[880px] overflow-clip rounded-[14px] bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,.5)] animate-[almPop_.28s_cubic-bezier(.16,.84,.44,1)]"
       >
-        <button
-          ref={closeRef}
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute right-4 top-4 z-10 flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-full border border-[#ececec] bg-white/90 text-[19px] leading-none text-zinc-700 transition-colors hover:bg-neutral-900 hover:text-white"
-        >
-          ×
-        </button>
+        {/* Zero-height sticky rail: the button stays in view while long profiles scroll. */}
+        <div className="sticky top-0 z-10 flex h-0 justify-end pr-4">
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="mt-4 flex h-[38px] w-[38px] cursor-pointer items-center justify-center rounded-full border border-[#ececec] bg-white/90 text-[19px] leading-none text-zinc-700 shadow-sm transition-colors hover:bg-neutral-900 hover:text-white"
+          >
+            ×
+          </button>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-[280px_1fr]">
           {/* Left: photo + facts */}
