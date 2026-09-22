@@ -13,6 +13,7 @@ export default function Header() {
     { href: "/teams", label: "Our Team" },
     { href: "/our-projects", label: "Our Projects" },
     { href: "/news", label: "News" },
+    { href: "/alumni", label: "Alumni" },
   ];
   const isJoinMenuActive = pathname === "/join-us" || pathname === "/contact";
 
