@@ -135,16 +135,16 @@ export default async function Home() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold sm:text-5xl">26+</div>
+                <div className="text-4xl font-bold sm:text-5xl">28+</div>
                 <div className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
                   PROJECTS CREATED
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold sm:text-5xl">40,000+</div>
+                <div className="text-4xl font-bold sm:text-5xl">25,000+</div>
                 <div className="mt-1 text-sm text-gray-900 sm:text-base">
                   <span className="hl">
-                    <span className="hlText font-bold">STUDENTS IMPACTED</span>
+                    <span className="hlText font-bold">IMPACTED</span>
                     <svg
                       aria-hidden="true"
                       className="hlInk"

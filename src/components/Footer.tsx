@@ -48,6 +48,10 @@ export default function Footer() {
           <p>Windsor, Ontario,</p>
           <p>Canada, N9B 3P4</p>
         </div>
+        <div className="text-sm mt-4 leading-5">
+          <p className="font-semibold">Joyce Entrepreneurship Centre</p>
+          <p>Second Floor, Room 200</p>
+        </div>
       </div>
     </footer>
   );

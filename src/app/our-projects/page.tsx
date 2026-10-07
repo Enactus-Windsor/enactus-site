@@ -54,7 +54,7 @@ export default async function OurProjects() {
             </div>
             <div className="border-y border-white/20 py-5 sm:border-x sm:border-y-0">
               <p className="text-4xl font-extrabold text-[rgba(255,196,0,0.9)]">
-                26+
+                28+
               </p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[0.14em] text-white/75">
                 Projects Created
@@ -62,10 +62,10 @@ export default async function OurProjects() {
             </div>
             <div className="py-5">
               <p className="text-4xl font-extrabold text-[rgba(255,196,0,0.9)]">
-                40,000+
+                25,000+
               </p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[0.14em] text-white/75">
-                Students Impacted
+                Impacted
               </p>
             </div>
           </div>
@@ -88,6 +88,7 @@ export default async function OurProjects() {
                   anchorId={anchorId}
                   logoSrc={logoSrc}
                   projectName={project.name.trim()}
+                  hasProjectLogo={Boolean(project.banner)}
                 />
               );
             })}

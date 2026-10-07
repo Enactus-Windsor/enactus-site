@@ -7,12 +7,14 @@ interface ProjectLogoTileProps {
   anchorId: string;
   logoSrc: string | StaticImageData;
   projectName: string;
+  hasProjectLogo: boolean;
 }
 
 export default function ProjectLogoTile({
   anchorId,
   logoSrc,
   projectName,
+  hasProjectLogo,
 }: ProjectLogoTileProps) {
   const href = `#${anchorId}`;
 
@@ -38,7 +40,7 @@ export default function ProjectLogoTile({
       <div className="relative h-16 w-16">
         <Image
           src={logoSrc}
-          alt={`${projectName} logo`}
+          alt={hasProjectLogo ? `${projectName} logo` : "Enactus Windsor logo"}
           fill
           sizes="64px"
           className="object-contain"

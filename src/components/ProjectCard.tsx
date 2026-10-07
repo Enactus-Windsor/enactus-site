@@ -61,7 +61,7 @@ export default function ProjectCard({
         <div className="relative h-20 w-20 overflow-hidden border border-gray-200 bg-white p-2.5">
           <Image
             src={bannerSrc}
-            alt={`${displayName} logo`}
+            alt={rawBanner ? `${displayName} logo` : "Enactus Windsor logo"}
             fill
             sizes="80px"
             className="object-contain p-2.5"

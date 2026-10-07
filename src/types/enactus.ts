@@ -16,7 +16,7 @@ export type EnactusTeam = {
 
 export interface EnactusProject {
   name: string;           
-  banner: string | StaticImageData;        
+  banner?: string | StaticImageData;
   summary: string;        
   overview: string;       
   departmentLead: string; 

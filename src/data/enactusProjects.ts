@@ -1,7 +1,6 @@
 import type { EnactusProject } from "@/types/enactus";
 
 import ascentLogo from "@/assets/projectlogos/ascent.png";
-import centsLogo from "@/assets/projectlogos/cents.png";
 import mycovoltLogo from "@/assets/projectlogos/mycovolt.png";
 import reedifyLogo from "@/assets/projectlogos/reedify.png";
 import fishLogo from "@/assets/projectlogos/fishLogo.png";
@@ -22,24 +21,8 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         {
           name: "Karlie Bula",
-          role: "Department Lead",
+          role: "Project Manager",
           department: "Ascent",
-        },
-      ],
-    },
-    {
-      name: "CentsAbility",
-      banner: centsLogo,
-      departmentLead: "Matthew Najem",
-      summary:
-        "Brings financial literacy directly into transitional housing and community homes across Ontario.",
-      overview:
-        "CentsAbility is a community-embedded financial literacy initiative that delivers essential money management skills directly into transitional housing and community homes across Ontario. The program empowers individuals of all ages from youth to adults with the tools to take control of their financial futures, right where they live. CentsAbility fosters trust and accessibility while helping underserved communities navigate financial challenges with confidence by meeting them where they are, both physically and financially.",
-      members: [
-        {
-          name: "Matthew Najem",
-          role: "Department Lead",
-          department: "CentsAbility",
         },
       ],
     },
@@ -54,52 +37,62 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         {
           name: "Ryan Gadoury",
-          role: "Department Lead",
+          role: "Founder",
           department: "Crisp Labs",
         },
       ],
     },
     {
-      name: "100% Fish ",
+      name: "100% Fish",
       banner: fishLogo,
-      departmentLead: "Amal Jose",
+      departmentLead: "Andrew Booth",
       summary:
         "Turns discarded fish parts into sustainable, nutritious dog treats to reduce waste and support eco-friendly practices.",
       overview:
-        "100% Fish  takes fish parts that go to waste and turns them into healthy, sustainable dog treats. The team’s goal is to reduce landfill waste, support eco-friendly practices, and help dogs live longer, healthier lives with better nutrition.",
+        "100% Fish takes fish parts that go to waste and turns them into healthy, sustainable dog treats. The team’s goal is to reduce landfill waste, support eco-friendly practices, and help dogs live longer, healthier lives with better nutrition.",
       members: [
         {
-          name: "Amal Jose",
-          role: "Department Lead",
-          department: "100% Fish ",
+          name: "Andrew Booth",
+          role: "Project Manager",
+          department: "100% Fish",
         },
       ],
     },
     {
       name: "MycoVolt",
       banner: mycovoltLogo,
-      departmentLead: "Jad El Hajj & Nash Wilkins",
+      departmentLead: "Nash Wilkins",
       summary:
         "Explores mushroom-based, eco-friendly battery alternatives using fungal root structures.",
       overview:
         "MycoVolt explores the potential of mushrooms in the development of sustainable energy solutions. By using the root structure of fungi, the team is researching how organic materials can be used to create eco-friendly batteries. This innovative approach reduces reliance on harmful chemicals and metals and also opens the door for greener, biodegradable alternatives in energy storage.",
       members: [
-        { name: "Jad El Hajj", role: "Co-Lead", department: "MycoVolt" },
-        { name: "Nash Wilkins", role: "Co-Lead", department: "MycoVolt" },
+        { name: "Nash Wilkins", role: "Project Manager", department: "MycoVolt" },
+      ],
+    },
+    {
+      name: "Node3",
+      departmentLead: "Lukas Waller",
+      summary:
+        "Helps greenhouse growers monitor sensor data and control their growing environments through customizable dashboards.",
+      overview:
+        "Node3 is a greenhouse management system built to store data and control systems throughout a greenhouse. Sensors send readings and receive commands through a database that stores each client's data and commands. A custom dashboard gives each client access to this information, helping growers understand their plants and the environments they grow in. The platform already includes tools for managing greenhouses while keeping a complete record of sensor data.",
+      members: [
+        { name: "Lukas Waller", role: "Founder", department: "Node3" },
       ],
     },
     {
       name: "REEDify",
       banner: reedifyLogo,
-      departmentLead: "Anthony vanier",
+      departmentLead: "Massimo Gualtieri",
       summary:
         "Transforms invasive reeds into useful products while supporting Indigenous communities.",
       overview:
         "REEDify is all about creating impact through resourcefulness and connection. The team turns invasive reed species into useful products like bug repellents and fire logs, reducing environmental harm while supporting Indigenous communities like the Caldwell First Nation. With a focus on sustainability and social responsibility.",
       members: [
         {
-          name: "Anthony Vanier",
-          role: "Department Lead",
+          name: "Massimo Gualtieri",
+          role: "Project Manager",
           department: "REEDify",
         },
       ],
@@ -113,8 +106,8 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       overview:
         "Second Rise works to reduce opioid-related overdoses in Windsor-Essex by distributing Narcan kits and providing overdose response training. The team aims to equip over 200 community members with life-saving skills and expand local preparedness through workshops and outreach. By combining access and education, Second Rise empowers individuals to prevent tragedies and strengthen community safety.",
       members: [
-        { name: "Avery Baker", role: "Co-Lead", department: "Second Rise" },
-        { name: "Madison Madore", role: "Co-Lead", department: "Second Rise" },
+        { name: "Avery Baker", role: "Co-Founder", department: "Second Rise" },
+        { name: "Madison Madore", role: "Co-Founder", department: "Second Rise" },
       ],
     },
     {

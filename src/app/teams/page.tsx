@@ -1,26 +1,16 @@
-// src/app/enactus/teams/page.tsx
-"use client";
-
-import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Archivo } from "next/font/google";
-import TeamCard from "@/components/TeamCard"; // your existing card
+import TeamCard from "@/components/TeamCard";
 import { fetchEnactusTeams } from "@/data/enactusApi";
 import { toTeamCardMember } from "@/utils/enactusAdapter";
-
-type EnactusTeam = Awaited<ReturnType<typeof fetchEnactusTeams>>[number];
 
 const teamHeadlineFont = Archivo({
   subsets: ["latin"],
   weight: ["800"],
 });
 
-export default function EnactusTeams() {
-  const [teams, setTeams] = useState<EnactusTeam[]>([]);
-
-  useEffect(() => {
-    (async () => setTeams(await fetchEnactusTeams()))();
-  }, []);
+export default async function EnactusTeams() {
+  const teams = await fetchEnactusTeams();
 
   const enactusBlack = "/images/teambanner.jpg";
   return (
@@ -58,9 +48,9 @@ export default function EnactusTeams() {
       <div className="relative z-10 bg-white flex justify-center">
         <div className="my-12 overflow-hidden">
           <div className="flex flex-col justify-center w-full">
-            {teams.map((team, index) => (
+            {teams.map((team) => (
               <section
-                key={index}
+                key={team.name}
                 id={team.name.replace(/\s+/g, "-").toLowerCase()}
                 className="mb-12"
               >
@@ -81,8 +71,11 @@ export default function EnactusTeams() {
                 {/* Members (adapter -> TeamCard) */}
                 <div className="flex justify-center">
                   <div className="grid w-full max-w-[1500px] grid-cols-2 gap-x-6 gap-y-12 px-6 text-black sm:grid-cols-3 sm:px-10 md:px-16 lg:grid-cols-4 xl:px-20 2xl:px-0">
-                    {team.members.map((m, idx) => (
-                      <TeamCard key={idx} member={toTeamCardMember(m)} />
+                    {team.members.map((member) => (
+                      <TeamCard
+                        key={member.name}
+                        member={toTeamCardMember(member)}
+                      />
                     ))}
                   </div>
                 </div>

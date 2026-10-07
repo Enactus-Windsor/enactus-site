@@ -1,53 +1,35 @@
-// src/data/enactusApi.ts
 import type { EnactusTeam } from "@/types/enactus";
+
+const teamBanner = "/images/test2.svg";
 
 export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
   return [
     {
-      name: "Executives",
-      banner: "/images/test2.svg",
+      name: "Board of Directors",
+      banner: teamBanner,
+      members: [
+        {
+          name: "Kent Walker",
+          role: "Faculty Advisor",
+          image: "/images/pfp/Kent.jpg",
+        },
+      ],
+    },
+    {
+      name: "Executive Team",
+      banner: teamBanner,
       members: [
         {
           name: "Andrew Booth",
           role: "President",
-          department: "",
           linkedin: "https://www.linkedin.com/in/andrewbooth-/",
           image: "/images/pfp/andrewbooth.jpg",
         },
         {
           name: "Matthew Tracey",
           role: "Vice President",
-          department: "",
           linkedin: "https://www.linkedin.com/in/matthew-tracey-6792052bb/",
-          image: "/images/pfp/MatthewTracey.jpg", //needed
-        },
-        {
-          name: "Helen Yousif",
-          role: "Executive Assistant",
-          department: "",
-          linkedin: "https://www.linkedin.com/in/helen-yousif-061230338/",
-          image: "/images/pfp/HelenYousif.jpeg",
-        },
-        {
-          name: "Karlie Bula",
-          role: "Department Lead",
-          department: "Ascent",
-          linkedin: "https://www.linkedin.com/in/karlie-bula-4a7332343/",
-          image: "/images/pfp/KarlieBula.jpg",
-        },
-        {
-          name: "Matthew Najem",
-          role: "Founder",
-          department: "CentsAbility",
-          linkedin: "https://www.linkedin.com/in/matthew-najem-26137a329/",
-          image: "/images/pfp/MatthewNajem.jpg",
-        },
-        {
-          name: "Trevor Kloppenburg ",
-          role: "Project Manager",
-          department: "100% Fish ",
-          linkedin: "https://www.linkedin.com/in/trevor-kloppenburg/",
-          image: "",
+          image: "/images/pfp/MatthewTracey.jpg",
         },
         {
           name: "Anita Jafari",
@@ -64,18 +46,10 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/SeanClarke.jpg",
         },
         {
-          name: "Ryan Gadoury",
-          role: "Founder",
-          department: "Crisp Labs",
-          linkedin: "https://www.linkedin.com/in/ryan-gadoury-1857b2328/",
-          image: "/images/pfp/RyanGadoury.jpg",
-        },
-        {
           name: "Baran Ghasroddashti",
           role: "Vice President",
           department: "Enterprise Development",
-          linkedin:
-            "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
+          linkedin: "https://www.linkedin.com/in/baran-ghasroddashti-9824a9385/",
           image: "/images/pfp/BaranGhasroddashti.jpg",
         },
         {
@@ -93,25 +67,55 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/LaylaGhanem.jpg",
         },
         {
+          name: "Helen Yousif",
+          role: "Executive Assistant",
+          linkedin: "https://www.linkedin.com/in/helen-yousif-061230338/",
+          image: "/images/pfp/HelenYousif.jpeg",
+        },
+        {
+          name: "Harris Sami",
+          role: "Executive Assistant",
+          image: "/images/pfp/HarrisSami.jpg",
+        },
+      ],
+    },
+    {
+      name: "Project Managers",
+      banner: teamBanner,
+      members: [
+        {
+          name: "Karlie Bula",
+          role: "Project Manager",
+          department: "Ascent",
+          linkedin: "https://www.linkedin.com/in/karlie-bula-4a7332343/",
+          image: "/images/pfp/KarlieBula.jpg",
+        },
+        {
+          name: "Andrew Booth",
+          role: "Project Manager",
+          department: "100% Fish",
+          linkedin: "https://www.linkedin.com/in/andrewbooth-/",
+          image: "/images/pfp/andrewbooth.jpg",
+        },
+        {
+          name: "Ryan Gadoury",
+          role: "Founder",
+          department: "Crisp Labs",
+          linkedin: "https://www.linkedin.com/in/ryan-gadoury-1857b2328/",
+          image: "/images/pfp/RyanGadoury.jpg",
+        },
+        {
           name: "Nash Wilkins",
-          role: "Co-Project Manager",
+          role: "Project Manager",
           department: "MycoVolt",
           linkedin: "https://www.linkedin.com/in/nash-wilkins/",
           image: "/images/pfp/NashWilkins.jpg",
         },
         {
-          name: "Jad El Hajj",
-          role: "Co-Project Manager",
-          department: "MycoVolt",
-          linkedin: "https://www.linkedin.com/in/jad-el-hajj-ab1133287/",
-          image: "",
-        },
-        {
-          name: "Anthony Vanier",
-          role: "Founder",
-          department: "Reedify",
-          linkedin: "https://www.linkedin.com/in/anthony-vanier/",
-          image: "/images/pfp/AnthonyVanier.jpg",
+          name: "Massimo Gualtieri",
+          role: "Project Manager",
+          department: "REEDify",
+          image: "/images/pfp/MassimoGualtieri.jpg",
         },
         {
           name: "Madison Madore",
@@ -128,9 +132,20 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           image: "/images/pfp/AveryBaker.jpg",
         },
         {
+          name: "Lukas Waller",
+          role: "Founder",
+          department: "Node3",
+        },
+      ],
+    },
+    {
+      name: "Department Leads",
+      banner: teamBanner,
+      members: [
+        {
           name: "Dhruv Sapra",
-          role: "Project Manager",
-          department: "Second Rise",
+          role: "Department Lead",
+          department: "Spark",
           linkedin: "https://www.linkedin.com/in/dhruv-sapra-3890211bb/",
           image: "/images/pfp/DhruvSapra.jpg",
         },
