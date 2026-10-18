@@ -29,6 +29,28 @@ const headlineFont = Archivo({
 const stories: Story[] = [
   {
     outletName: "University of Windsor",
+    headline:
+      "From fish byproducts to invasive plants: UWindsor’s Enactus team earns national recognition for two sustainability projects",
+    publicationDate: "June 3, 2026",
+    summary:
+      "Enactus Windsor carried regional wins for 100% Fish and REEDify into the 2026 Enactus Canada National Exposition in Montreal. The fish-waste-to-dog-treats project finished second runner-up in the environmental sustainability challenge, while REEDify showcased products made from invasive phragmites. After competing against 49 institutions, the team reached the semifinals and received the national Spirit of Enactus Award for its student engagement, cross-faculty collaboration, leadership development, and team culture.",
+    href: "https://www.uwindsor.ca/news/2026-06-03/fish-byproducts-invasive-plants-uwindsor%E2%80%99s-enactus-team-earns-national-recognition-two",
+    buttonLabel: "Read More",
+    imageSrc: "/images/news/Jun3rd-2026.jpg",
+  },
+  {
+    outletName: "University of Windsor",
+    headline:
+      "Odette students show teachers how entrepreneurship gets done — with 24,000 volunteer hours to prove it",
+    publicationDate: "May 22, 2026",
+    summary:
+      "At an Odette School of Business professional development day for local business teachers, Enactus Windsor president Andrew Booth and vice-president Matthew Tracey explained how students turn ideas into ventures through cross-disciplinary teamwork. Booth reported more than 24,000 volunteer hours contributed by just over 100 students. The event also connected teachers with local business leaders and experiential learning opportunities through programs such as Ascent and Market Day.",
+    href: "https://www.uwindsor.ca/news/2026-05-04/odette-students-show-teachers-how-entrepreneurship-gets-done-%E2%80%94-24000-volunteer-hours",
+    buttonLabel: "Read More",
+    imageSrc: "/images/news/May22-2026.jpg",
+  },
+  {
+    outletName: "University of Windsor",
     headline: "Green innovation puts Enactus Windsor on national map",
     publicationDate: "April 23, 2026",
     summary:
