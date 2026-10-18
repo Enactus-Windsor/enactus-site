@@ -11,7 +11,32 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         {
           name: "Kent Walker",
           role: "Faculty Advisor",
-          image: "/images/pfp/Kent.jpg",
+          image: "/images/pfp/board_members/Kent_Walker.png",
+        },
+        {
+          name: "Amanda Lim",
+          role: "Board Member",
+          image: "/images/pfp/board_members/Amanda_Lim.png",
+        },
+        {
+          name: "Jim Marsh",
+          role: "Board Member",
+          image: "/images/pfp/board_members/Jim_Marsh.png",
+        },
+        {
+          name: "Josianne Marsan",
+          role: "Board Member",
+          image: "/images/pfp/board_members/Josianne_Marsan.png",
+        },
+        {
+          name: "Kevin Hamilton",
+          role: "Board Member",
+          image: "/images/pfp/board_members/Kevin_Hamilton.png",
+        },
+        {
+          name: "Paul Schlosser",
+          role: "Board Member",
+          image: "/images/pfp/board_members/Paul_Schlosser.png",
         },
       ],
     },

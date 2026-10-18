@@ -39,7 +39,11 @@ export default function TeamCard({ member }: TeamCardProps) {
               : "object-contain object-center p-4 opacity-50"
           }
           src={imgSrc}
-          alt={member.name}
+          alt={
+            hasCustomImage
+              ? member.name
+              : `Enactus Windsor logo placeholder for ${member.name}`
+          }
           fill
           sizes="(min-width: 1536px) 700px, (min-width: 1024px) 50vw, (min-width: 640px) 67vw, 100vw"
           quality={90}
