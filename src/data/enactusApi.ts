@@ -72,6 +72,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         {
           name: "Harris Sami",
           role: "Executive Assistant",
+          linkedin: "https://www.linkedin.com/in/harris-sami-a75b99355/",
           image: "/images/pfp/HarrisSami.jpg",
         },
       ],
@@ -112,6 +113,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           name: "Massimo Gualtieri",
           role: "Project Manager",
           department: "REEDify",
+          linkedin: "https://www.linkedin.com/in/massimo-gualtieri-807397359/",
           image: "/images/pfp/MassimoGualtieri.jpg",
         },
         {
@@ -132,6 +134,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           name: "Lukas Waller",
           role: "Founder",
           department: "Node3",
+          linkedin: "https://www.linkedin.com/in/lukas-waller/",
           image: "/images/pfp/LukasWaller.png",
         },
       ],
