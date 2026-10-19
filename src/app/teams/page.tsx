@@ -75,6 +75,9 @@ export default async function EnactusTeams() {
                       <TeamCard
                         key={member.name}
                         member={toTeamCardMember(member)}
+                        variant={
+                          team.name === "Board of Directors" ? "board" : "default"
+                        }
                       />
                     ))}
                   </div>

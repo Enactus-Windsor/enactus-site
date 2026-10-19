@@ -19,5 +19,7 @@ export function toTeamCardMember(m: EnactusMember) {
     image: m.image ?? "",
     linkedin: m.linkedin ?? "",
     department: m.department ?? "",
+    title: m.title,
+    imagePosition: m.imagePosition,
   };
 }

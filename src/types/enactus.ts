@@ -6,6 +6,8 @@ export type EnactusMember = {
   major?: string;
   linkedin?: string;
   image?: string;          
+  title?: string;
+  imagePosition?: "left" | "center";
 };
 
 export type EnactusTeam = {

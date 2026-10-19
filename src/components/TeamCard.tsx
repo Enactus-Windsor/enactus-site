@@ -13,11 +13,16 @@ interface TeamCardProps {
     year?: string;
     joined?: string;
   };
+  variant?: "board" | "default";
 }
 
-export default function TeamCard({ member }: TeamCardProps) {
+export default function TeamCard({
+  member,
+  variant = "default",
+}: TeamCardProps) {
   const hasCustomImage = !!member.image && member.image.trim() !== "";
   const imgSrc = hasCustomImage ? member.image! : FALLBACK_IMAGE;
+  const isBoardMember = variant === "board";
 
   // If you still want first + last line split:
   const firstName = member.firstName ?? member.name.split(" ")[0] ?? "";
@@ -35,7 +40,9 @@ export default function TeamCard({ member }: TeamCardProps) {
         <Image
           className={
             hasCustomImage
-              ? "object-cover object-center"
+              ? `object-cover ${
+                  member.imagePosition === "left" ? "object-left" : "object-center"
+                }`
               : "object-contain object-center p-4 opacity-50"
           }
           src={imgSrc}
@@ -53,10 +60,12 @@ export default function TeamCard({ member }: TeamCardProps) {
       {/* Content */}
       <div className="mt-6 flex flex-col">
         <div className="flex flex-col">
-          <h3 className="text-sm font-serif text-primary min-h-12 mb-2 sm:text-base xl:text-lg">
-            {member.role}
-            {member.department && ` - ${member.department}`}
-          </h3>
+          {!isBoardMember && (
+            <h3 className="text-sm font-serif text-primary min-h-12 mb-2 sm:text-base xl:text-lg">
+              {member.role}
+              {member.department && ` - ${member.department}`}
+            </h3>
+          )}
 
           <div className="flex flex-col w-full mb-4">
             <h1 className="text-lg font-semibold font-serif sm:text-2xl xl:text-3xl sm:font-medium">
@@ -68,12 +77,18 @@ export default function TeamCard({ member }: TeamCardProps) {
               </h1>
             )}
           </div>
+          {isBoardMember && (
+            <p className="text-sm font-serif text-primary min-h-12 sm:text-base xl:text-lg">
+              {member.title ?? member.role}
+            </p>
+          )}
         </div>
 
         {/* LinkedIn Button */}
         {member.linkedin && member.linkedin.trim() !== "" && (
           <a
             href={member.linkedin}
+            aria-label={`${member.name} on LinkedIn`}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 inline-flex items-center sm:mt-12"
