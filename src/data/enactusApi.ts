@@ -31,7 +31,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         {
           name: "Kevin Hamilton",
           role: "Board Member",
-          image: "/images/pfp/board_members/Kevin_Hamilton.png",
+          image: "/images/alumni/kevin-hamilton.svg",
         },
         {
           name: "Paul Schlosser",

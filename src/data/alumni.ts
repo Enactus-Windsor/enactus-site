@@ -34,7 +34,7 @@ export const alumni: Alumnus[] = [
     role: "Senior Relationship Manager",
     company: "Export Development Canada",
     team: "Youthrive",
-    imageSrc: "/images/alumni/jacob-arcas.jpg",
+    imageSrc: "/images/alumni/jacob-arcas.svg",
     bio: "Jacob works in Trade Finance as a Senior Relationship Manager with Export Development Canada (EDC), supporting Canadian businesses with their growth and international expansion strategies. At Enactus Windsor he served as a Youthrive Mentor, VP of Media and Technology, and Co-President, and presented on stage in the final four with the 2015 nationals team. He remains involved through the Enactus Windsor Alumni Advisory Board.",
     quote:
       "It showed me the power of combining business with purpose and creating meaningful impact within the community.",
@@ -77,7 +77,7 @@ export const alumni: Alumnus[] = [
     role: "Senior Relationship Manager",
     company: "TD Commercial Banking",
     team: "CityThrive",
-    imageSrc: "/images/alumni/kevin-hamilton.jpg",
+    imageSrc: "/images/alumni/kevin-hamilton.svg",
     bio: "Kevin is a Senior Relationship Manager in Commercial Banking at TD, working with Canadian companies as they grow and support their communities. At Enactus Windsor he was a CityThrive Mentor, started his own project helping at-risk youth explore entrepreneurship, presented at Regional and National competitions, and travelled to Beijing for the 2014 Enactus World Cup. Today he serves as Board Chair of the Enactus Canada Alumni Advisory Board.",
     quote:
       "Enactus was so formative to me from day one, as it was one of the first places where I felt like you could really control your own outcomes.",
