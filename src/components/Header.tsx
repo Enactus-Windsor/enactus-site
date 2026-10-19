@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,17 +8,32 @@ import logo from "../assets/logo.png";
 
 export default function Header() {
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Expose the fixed header's live height so sticky elements can sit just below it.
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+    const root = document.documentElement;
+    const update = () =>
+      root.style.setProperty("--site-header-h", `${header.offsetHeight}px`);
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/teams", label: "Our Team" },
     { href: "/our-projects", label: "Our Projects" },
     { href: "/news", label: "News" },
+    { href: "/alumni", label: "Alumni" },
   ];
   const isJoinMenuActive = pathname === "/join-us" || pathname === "/contact";
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 text-white">
+    <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 text-white">
       <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/55 to-black/15 backdrop-blur-[2px]" />
       <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center gap-2 px-4 pb-3 pt-3 sm:flex-row sm:gap-8 sm:px-6 sm:pb-4 sm:pt-4">
         <Link href="/" aria-label="Home" className="inline-flex flex-shrink-0 items-center">
