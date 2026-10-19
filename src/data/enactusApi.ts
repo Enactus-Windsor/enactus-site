@@ -132,6 +132,7 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
           name: "Lukas Waller",
           role: "Founder",
           department: "Node3",
+          image: "/images/pfp/LukasWaller.png",
         },
       ],
     },
