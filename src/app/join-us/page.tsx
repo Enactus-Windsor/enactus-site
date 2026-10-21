@@ -94,11 +94,11 @@ export default function JoinUs() {
               {[
                 {
                   title: "Build Something That Matters",
-                  body: `At Enactus Windsor, you don’t just talk about problems, you design and launch solutions. Whether you’re passionate about sustainability, community development, entrepreneurship, or innovation, you’ll work on projects that create measurable impact across Windsor-Essex and beyond.`,
+                  body: `At Enactus Windsor, you don’t just talk about problems, you design and launch solutions. Whether you’re passionate about sustainability, community development, entrepreneurship, or innovation, you’ll work on ventures that create measurable impact across Windsor-Essex and beyond.`,
                 },
                 {
                   title: "Learn by Doing (Not by Sitting in a Classroom)",
-                  body: `You’ll gain hands-on experience in venture creation and validation, project management and leadership, research/design and real-world problem solving, and pitching/storytelling/professional communication, the skills employers look for and the ones that help you stand out.`,
+                  body: `You’ll gain hands-on experience in venture creation and validation, venture management and leadership, research/design and real-world problem solving, and pitching/storytelling/professional communication, the skills employers look for and the ones that help you stand out.`,
                 },
                 {
                   title: "Join a Community of Builders and Leaders",
@@ -134,7 +134,7 @@ export default function JoinUs() {
                 <p className="mt-4 leading-relaxed text-white/90">
                   Joining Enactus Windsor transforms your university experience.
                   You will graduate not just with a credential, but with a
-                  portfolio of real projects, real impact, and real leadership.
+                  portfolio of real ventures, real impact, and real leadership.
                 </p>
               </div>
             </div>

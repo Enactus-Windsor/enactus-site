@@ -21,7 +21,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         {
           name: "Karlie Bula",
-          role: "Project Manager",
+          role: "CEO",
           department: "Ascent",
         },
       ],
@@ -33,7 +33,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       summary:
         "Upcycles rejected produce into business-ready ingredients that reduce food waste and create new value.",
       overview:
-        "Crisp Labs is a produce upcycling and ingredient innovation project focused on turning rejected agricultural produce into secondary products and ingredients. Instead of focusing only on direct-to-consumer snacks, the project is exploring a B2B ingredient model where produce can be processed into powders, dehydrated ingredients, and other usable materials that can be sold to businesses.",
+        "Crisp Labs is a produce upcycling and ingredient innovation venture focused on turning rejected agricultural produce into secondary products and ingredients. Instead of focusing only on direct-to-consumer snacks, the venture is exploring a B2B ingredient model where produce can be processed into powders, dehydrated ingredients, and other usable materials that can be sold to businesses.",
       members: [
         {
           name: "Ryan Gadoury",
@@ -53,7 +53,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         {
           name: "Andrew Booth",
-          role: "Project Manager",
+          role: "CEO",
           department: "100% Fish",
         },
       ],
@@ -67,7 +67,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       overview:
         "MycoVolt explores the potential of mushrooms in the development of sustainable energy solutions. By using the root structure of fungi, the team is researching how organic materials can be used to create eco-friendly batteries. This innovative approach reduces reliance on harmful chemicals and metals and also opens the door for greener, biodegradable alternatives in energy storage.",
       members: [
-        { name: "Nash Wilkins", role: "Project Manager", department: "MycoVolt" },
+        { name: "Nash Wilkins", role: "CEO", department: "MycoVolt" },
       ],
     },
     {
@@ -92,7 +92,7 @@ export async function fetchEnactusProjects(): Promise<EnactusProject[]> {
       members: [
         {
           name: "Massimo Gualtieri",
-          role: "Project Manager",
+          role: "CEO",
           department: "REEDify",
         },
       ],

@@ -12,7 +12,7 @@ function projectAnchorId(projectName: string) {
     .replace(/^-|-$/g, "")}`;
 }
 
-export default async function OurProjects() {
+export default async function OurVentures() {
   const projects = await fetchEnactusProjects();
 
   return (
@@ -34,10 +34,10 @@ export default async function OurProjects() {
               Student-Led Impact
             </p>
             <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-none tracking-tight sm:text-6xl md:text-7xl">
-              Our Projects
+              Our Ventures
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-              Enactus Windsor is powered by student-led projects that turn
+              Enactus Windsor is powered by student-led ventures that turn
               entrepreneurship into practical action for social, environmental,
               and economic challenges in our community.
             </p>
@@ -49,7 +49,7 @@ export default async function OurProjects() {
                 {projects.length}
               </p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[0.14em] text-white/75">
-                Active Projects
+                Active Ventures
               </p>
             </div>
             <div className="border-y border-white/20 py-5 sm:border-x sm:border-y-0">
@@ -57,7 +57,7 @@ export default async function OurProjects() {
                 28+
               </p>
               <p className="mt-1 text-sm font-bold uppercase tracking-[0.14em] text-white/75">
-                Projects Created
+                Ventures Created
               </p>
             </div>
             <div className="py-5">
@@ -75,7 +75,7 @@ export default async function OurProjects() {
       <section className="bg-[rgba(255,196,0,0.9)] px-4 py-8 sm:px-6">
         <div className="mx-auto max-w-6xl">
           <p className="mb-5 text-center text-sm font-bold uppercase tracking-[0.24em] text-black/75">
-            Current Projects
+            Current Ventures
           </p>
           <div className="flex flex-wrap justify-center">
             {projects.map((project) => {
@@ -104,11 +104,11 @@ export default async function OurProjects() {
                 Explore the work
               </p>
               <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-gray-950 md:text-5xl">
-                Project Directory
+                Venture Directory
               </h2>
             </div>
             <p className="text-base leading-7 text-gray-700">
-              Open a project to learn what it does, who leads it, and how it
+              Open a venture to learn what it does, who leads it, and how it
               contributes to Enactus Windsor&apos;s impact portfolio.
             </p>
           </div>

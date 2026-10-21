@@ -137,7 +137,7 @@ export default async function Home() {
               <div className="text-center">
                 <div className="text-4xl font-bold sm:text-5xl">28+</div>
                 <div className="mt-1 text-sm font-bold text-gray-900 sm:text-base">
-                  PROJECTS CREATED
+                  VENTURES CREATED
                 </div>
               </div>
               <div className="text-center">
@@ -168,15 +168,15 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* OUR PROJECTS – carousel */}
+        {/* OUR VENTURES – carousel */}
         <div className="mx-auto max-w-6xl px-4 py-14">
           <div className="text-center">
             <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl">
-              OUR PROJECTS
+              OUR VENTURES
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-gray-700">
-              Discover the student-led projects creating real impact in Windsor.
-              Tap a project to learn more on our projects page.
+              Discover the student-led ventures creating real impact in Windsor.
+              Tap a venture to learn more on our ventures page.
             </p>
           </div>
 

@@ -76,7 +76,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
           return (
             <Link
               key={project.name}
-              href="/our-projects"
+              href="/our-ventures"
               className="group min-w-[260px] max-w-[320px] flex-shrink-0 rounded-3xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
             >
               <div className="flex flex-col items-center p-5 text-center sm:p-6">
@@ -95,7 +95,7 @@ export default function ProjectsCarousel({ projects }: ProjectsCarouselProps) {
                   {project.summary}
                 </p>
                 <span className="mt-4 text-sm font-semibold text-yellow-600 group-hover:text-yellow-500">
-                  View on Our Projects →
+                  View on Our Ventures →
                 </span>
               </div>
             </Link>

@@ -78,19 +78,19 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
       ],
     },
     {
-      name: "Project Managers",
+      name: "Venture Leaders",
       banner: teamBanner,
       members: [
         {
           name: "Karlie Bula",
-          role: "Project Manager",
+          role: "CEO",
           department: "Ascent",
           linkedin: "https://www.linkedin.com/in/karlie-bula-4a7332343/",
           image: "/images/pfp/KarlieBula.jpg",
         },
         {
           name: "Andrew Booth",
-          role: "Project Manager",
+          role: "CEO",
           department: "100% Fish",
           linkedin: "https://www.linkedin.com/in/andrewbooth-/",
           image: "/images/pfp/andrewbooth.jpg",
@@ -104,14 +104,14 @@ export async function fetchEnactusTeams(): Promise<EnactusTeam[]> {
         },
         {
           name: "Nash Wilkins",
-          role: "Project Manager",
+          role: "CEO",
           department: "MycoVolt",
           linkedin: "https://www.linkedin.com/in/nash-wilkins/",
           image: "/images/pfp/NashWilkins.jpg",
         },
         {
           name: "Massimo Gualtieri",
-          role: "Project Manager",
+          role: "CEO",
           department: "REEDify",
           linkedin: "https://www.linkedin.com/in/massimo-gualtieri-807397359/",
           image: "/images/pfp/MassimoGualtieri.jpg",

@@ -72,7 +72,7 @@ export default function ProjectCard({
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             {index && (
               <span className="text-xs font-extrabold uppercase tracking-[0.22em] text-yellow-600">
-                Project {String(index).padStart(2, "0")}
+                Venture {String(index).padStart(2, "0")}
               </span>
             )}
             {project.departmentLead && (
@@ -119,7 +119,7 @@ export default function ProjectCard({
           {project.members?.length ? (
             <aside className="border-l-4 border-[rgba(255,196,0,0.9)] bg-gray-50 p-5">
               <h4 className="text-xs font-bold uppercase tracking-[0.22em] text-gray-500">
-                Project Leadership
+                Venture Leadership
               </h4>
               <ul className="mt-4 space-y-4">
                 {project.members.map((member) => (

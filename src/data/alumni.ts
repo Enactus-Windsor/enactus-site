@@ -21,7 +21,7 @@ export type Alumnus = {
 
 const QUESTIONS = [
   "What are you currently doing professionally?",
-  "What role(s) or project(s) were you involved in during your time with Enactus Windsor?",
+  "What roles did you hold, and which ventures did you work on during your time with Enactus Windsor?",
   "What was your favourite memory or moment from Enactus?",
   "What skills or experiences from Enactus have stayed with you the most since graduating?",
   "Looking back, what did Enactus mean to you personally?",
@@ -78,7 +78,7 @@ export const alumni: Alumnus[] = [
     company: "TD Commercial Banking",
     team: "CityThrive",
     imageSrc: "/images/alumni/kevin-hamilton.svg",
-    bio: "Kevin is a Senior Relationship Manager in Commercial Banking at TD, working with Canadian companies as they grow and support their communities. At Enactus Windsor he was a CityThrive Mentor, started his own project helping at-risk youth explore entrepreneurship, presented at Regional and National competitions, and travelled to Beijing for the 2014 Enactus World Cup. Today he serves as Board Chair of the Enactus Canada Alumni Advisory Board.",
+    bio: "Kevin is a Senior Relationship Manager in Commercial Banking at TD, working with Canadian companies as they grow and support their communities. At Enactus Windsor he was a CityThrive Mentor, started his own venture helping at-risk youth explore entrepreneurship, presented at Regional and National competitions, and travelled to Beijing for the 2014 Enactus World Cup. Today he serves as Board Chair of the Enactus Canada Alumni Advisory Board.",
     quote:
       "Enactus was so formative to me from day one, as it was one of the first places where I felt like you could really control your own outcomes.",
     spotlight: [

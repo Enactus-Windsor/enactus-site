@@ -33,7 +33,7 @@ const stories: Story[] = [
       "From fish byproducts to invasive plants: UWindsor’s Enactus team earns national recognition for two sustainability projects",
     publicationDate: "June 3, 2026",
     summary:
-      "Enactus Windsor carried regional wins for 100% Fish and REEDify into the 2026 Enactus Canada National Exposition in Montreal. The fish-waste-to-dog-treats project finished second runner-up in the environmental sustainability challenge, while REEDify showcased products made from invasive phragmites. After competing against 49 institutions, the team reached the semifinals and received the national Spirit of Enactus Award for its student engagement, cross-faculty collaboration, leadership development, and team culture.",
+      "Enactus Windsor carried regional wins for 100% Fish and REEDify into the 2026 Enactus Canada National Exposition in Montreal. The fish-waste-to-dog-treats venture finished second runner-up in the environmental sustainability challenge, while REEDify showcased products made from invasive phragmites. After competing against 49 institutions, the team reached the semifinals and received the national Spirit of Enactus Award for its student engagement, cross-faculty collaboration, leadership development, and team culture.",
     href: "https://www.uwindsor.ca/news/2026-06-03/fish-byproducts-invasive-plants-uwindsor%E2%80%99s-enactus-team-earns-national-recognition-two",
     buttonLabel: "Read More",
     imageSrc: "/images/news/Jun3rd-2026.jpg",
@@ -54,7 +54,7 @@ const stories: Story[] = [
     headline: "Green innovation puts Enactus Windsor on national map",
     publicationDate: "April 23, 2026",
     summary:
-      "Enactus Windsor achieved top results at the Enactus Canada Central Canada Regional Exposition, becoming the only institution in Central Canada and one of just three nationally to place in all four Impact Challenges. The team earned first-place finishes for 100% Fish, an initiative transforming fish-processing byproducts into sustainable products, and REEDify, which repurposes invasive phragmites into environmentally beneficial products. Following their regional success, both projects will advance to the Enactus Canada National Exposition in Montreal.",
+      "Enactus Windsor achieved top results at the Enactus Canada Central Canada Regional Exposition, becoming the only institution in Central Canada and one of just three nationally to place in all four Impact Challenges. The team earned first-place finishes for 100% Fish, an initiative transforming fish-processing byproducts into sustainable products, and REEDify, which repurposes invasive phragmites into environmentally beneficial products. Following their regional success, both ventures will advance to the Enactus Canada National Exposition in Montreal.",
     href: "https://www.uwindsor.ca/news/2026-04-23/green-innovation-puts-enactus-windsor-national-map",
     buttonLabel: "Read More",
     imageSrc: "/images/news/apr24-2026.jpg",
@@ -64,7 +64,7 @@ const stories: Story[] = [
     headline: "These university students are turning fish guts into dog treats",
     publicationDate: "November 24, 2025",
     summary:
-      "Enactus Windsor students collaborated with a local fishery and the Great Lakes Institute of Environmental Research to transform Lake Erie fish waste into sustainable dog treats. This interdisciplinary project aims to divert thousands of kilograms of byproduct from landfills while creating a high-quality, eco-friendly product for pet owners.",
+      "Enactus Windsor students collaborated with a local fishery and the Great Lakes Institute of Environmental Research to transform Lake Erie fish waste into sustainable dog treats. This interdisciplinary venture aims to divert thousands of kilograms of byproduct from landfills while creating a high-quality, eco-friendly product for pet owners.",
     href: "https://www.cbc.ca/news/canada/windsor/university-students-fish-waste-dog-food-9.6990327",
     buttonLabel: "Read More",
     imageSrc: "/images/news/nov24-2025.jpg",
@@ -85,7 +85,7 @@ const stories: Story[] = [
       "‘Why not me?’: University students tackle Windsor’s opioid crisis",
     publicationDate: "November 12, 2025",
     summary:
-      "Enactus Windsor is addressing the local opioid crisis through Second Rise, a project that combines city-wide naloxone training with a specialized employment program for recovering addicts. By partnering with the House of Sophrosyne and local authorities, the initiative focuses on reducing the stigma surrounding substance use while providing individuals with the practical tools and opportunities needed to re-enter the workforce",
+      "Enactus Windsor is addressing the local opioid crisis through Second Rise, a venture that combines city-wide naloxone training with a specialized employment program for recovering addicts. By partnering with the House of Sophrosyne and local authorities, the initiative focuses on reducing the stigma surrounding substance use while providing individuals with the practical tools and opportunities needed to re-enter the workforce",
     href: "https://www.ctvnews.ca/windsor/article/why-not-me-university-students-tackle-windsors-opioid-crisis/",
     buttonLabel: "Watch Video",
     imageSrc: "/images/news/nov12-2025.jpg",
@@ -178,7 +178,7 @@ export default function NewsPage() {
           <h1
             className={`${headlineFont.className} text-5xl font-extrabold leading-none tracking-tight text-[rgba(255,196,0,0.9)] [text-shadow:0_4px_18px_rgba(0,0,0,0.55)] sm:text-6xl md:text-8xl`}
           >
-            Projects in the Press
+            Ventures in the Press
           </h1>
           <p className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-white/95 [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] sm:text-lg">
             {INTRO_TEXT}
